@@ -14,6 +14,9 @@ dependencies:
   astro:
     specifier: ^3.5.4
     version: 3.5.4(typescript@5.2.2)
+  class-variance-authority:
+    specifier: ^0.7.0
+    version: 0.7.0
   tailwindcss:
     specifier: ^3.0.24
     version: 3.3.5
@@ -1333,6 +1336,12 @@ packages:
   /ci-info@3.9.0:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
     engines: {node: '>=8'}
+    dev: false
+
+  /class-variance-authority@0.7.0:
+    resolution: {integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A==}
+    dependencies:
+      clsx: 2.0.0
     dev: false
 
   /cli-boxes@3.0.0:

@@ -11,6 +11,15 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.2
     version: 5.0.2(astro@3.5.4)(tailwindcss@3.3.5)
+  '@fontsource/merriweather':
+    specifier: ^5.0.8
+    version: 5.0.8
+  '@fontsource/pacifico':
+    specifier: ^5.0.8
+    version: 5.0.8
+  '@fontsource/roboto':
+    specifier: ^5.0.8
+    version: 5.0.8
   astro:
     specifier: ^3.5.4
     version: 3.5.4(typescript@5.2.2)
@@ -797,6 +806,18 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/merriweather@5.0.8:
+    resolution: {integrity: sha512-4vvR6psdKcGzaFCQL8fGCqMI/mOLKD+mhmUe3iQilx/4VFkIcF7wswWHZ7KCPeF24edX8yd0QXX0DQ1CenMrYA==}
+    dev: false
+
+  /@fontsource/pacifico@5.0.8:
+    resolution: {integrity: sha512-0WQ50ZzIv3dP98ET8Pthr12cF6f8ova3FslIXjrtwh9mo2Xo60T1hzUhVNfZLFVtwd2MVH6MNVa85OCfqZ4/+w==}
+    dev: false
+
+  /@fontsource/roboto@5.0.8:
+    resolution: {integrity: sha512-XxPltXs5R31D6UZeLIV1td3wTXU3jzd3f2DLsXI8tytMGBkIsGcc9sIyiupRtA8y73HAhuSCeweOoBqf6DbWCA==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}

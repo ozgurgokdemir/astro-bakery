@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon/components';
+import Logo from '@/components/Logo.astro';
+import NavLink from '@/components/NavLink.astro';
+import Button from '@/components/Button.astro';
+---
+
+<header class="container mx-auto py-12 px-8 flex items-center justify-between">
+  <Logo />
+  <nav aria-label="main" class="flex items-center gap-12">
+    <NavLink href="/">Home</NavLink>
+    <NavLink href="/menu">Menu</NavLink>
+    <NavLink href="/about">About</NavLink>
+    <Button variant="secondary" size="medium" asChild>
+      {
+        (className: string) => (
+          <NavLink href="/contact" class={`${className} !decoration-inherit`}>
+            <span>Contact</span>
+            <Icon name="heroicons:arrow-long-right-20-solid" class="h-5 w-5" />
+          </NavLink>
+        )
+      }
+    </Button>
+  </nav>
+</header>

@@ -1,0 +1,33 @@
+---
+import '@fontsource/pacifico';
+import '@fontsource/merriweather/400.css';
+import '@fontsource/merriweather/700.css';
+import '@fontsource/roboto';
+import '@/styles/globals.css';
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = 'Sweet Delights Bakery',
+  description = 'Welcome to Sweet Delights Bakery. Explore our menu of artisanal bread, cookies, pastries, and cakes. Join us on a journey of flavors and heartwarming experiences.',
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="font-primary text-neutral bg-surface">
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

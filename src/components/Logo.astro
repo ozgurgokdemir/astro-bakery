@@ -1,0 +1,11 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'a'>;
+
+const { href = '/', ...props } = Astro.props;
+---
+
+<a {href} class="font-logo text-primary text-[2rem]" {...props}>
+  Sweet Delights.
+</a>

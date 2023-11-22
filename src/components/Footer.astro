@@ -1,0 +1,117 @@
+---
+import Logo from '@/components/Logo.astro';
+
+const FOOTER_DATA = {
+  info: [
+    { href: 'tel:', text: '+1 (555) 123-4567' },
+    {
+      href: 'mailto:',
+      text: 'info@sweetdelightsbakery.com',
+    },
+  ],
+  browse: [
+    { href: '/', text: 'Home' },
+    { href: '/menu', text: 'Menu' },
+    { href: '/about', text: 'About' },
+    { href: '/contact', text: 'Contact' },
+  ],
+  follow: [
+    { href: '/', text: 'Instagram' },
+    { href: '/', text: 'Twitter' },
+    { href: '/', text: 'YouTube' },
+  ],
+  openingHours: [
+    'Monday - Friday: 7:00 AM - 7:00 PM',
+    'Saturday: 8:00 AM - 6:00 PM',
+    '123 Sweet Street, Bakeryville, CA 12345',
+  ],
+};
+---
+
+<footer class="bg-surface-container">
+  <nav
+    aria-label="footer"
+    class="container mx-auto flex justify-between gap-16 py-24 px-8"
+  >
+    <div class="flex flex-col gap-4">
+      <Logo href="/" />
+      <ul class="mt-7 flex flex-col gap-1">
+        {
+          FOOTER_DATA.info.map(({ href, text }) => (
+            <li>
+              <a
+                {href}
+                class="font-secondary font-medium leading-relaxed text-neutral/60 hover:text-neutral hover:underline focus-visible:text-neutral focus-visible:underline"
+              >
+                {text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h3 class="font-primary font-bold text-primary text-xl">Browse</h3>
+      <ul class="flex flex-col gap-1">
+        {
+          FOOTER_DATA.browse.map(({ href, text }) => (
+            <li>
+              <a
+                {href}
+                class="font-secondary font-medium leading-relaxed text-neutral/60 hover:text-neutral hover:underline focus-visible:text-neutral focus-visible:underline"
+              >
+                {text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h3 class="font-primary font-bold text-primary text-xl">Follow</h3>
+      <ul class="flex flex-col gap-1">
+        {
+          FOOTER_DATA.follow.map(({ href, text }) => (
+            <li>
+              <a
+                {href}
+                class="font-secondary font-medium leading-relaxed text-neutral/60 hover:text-neutral hover:underline focus-visible:text-neutral focus-visible:underline"
+              >
+                {text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h3 class="font-primary font-bold text-primary text-xl">
+        We are here for you
+      </h3>
+      <ul class="flex flex-col gap-1">
+        {
+          FOOTER_DATA.openingHours.map((text) => (
+            <li>
+              <p class="font-secondary font-medium leading-relaxed text-neutral/60">
+                {text}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+  <div
+    class="container mx-auto py-6 px-8 flex justify-between border-t border-divider"
+  >
+    <p class="font-secondary font-medium leading-relaxed text-neutral/60">
+      &copy; 2020 Sweet Delights, Inc. All rights reserved.
+    </p>
+    <a
+      href="/"
+      class="font-secondary font-medium leading-relaxed text-neutral/60 hover:text-neutral hover:underline focus-visible:text-neutral focus-visible:underline"
+    >
+      Privacy Policy
+    </a>
+  </div>
+</footer>

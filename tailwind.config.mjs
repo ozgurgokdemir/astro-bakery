@@ -20,6 +20,9 @@ export default {
         outline: 'hsl(var(--color-outline) / <alpha-value>)',
         divider: 'hsl(var(--color-divider) / <alpha-value>)',
       },
+      lineHeight: {
+        relaxed: '1.75',
+      },
     },
   },
   plugins: [],

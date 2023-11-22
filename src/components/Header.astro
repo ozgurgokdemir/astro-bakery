@@ -5,9 +5,11 @@ import NavLink from '@/components/NavLink.astro';
 import Button from '@/components/Button.astro';
 ---
 
-<header class="container mx-auto py-12 px-8 flex items-center justify-between">
+<header
+  class="container mx-auto py-8 px-6 lg:py-12 lg:px-8 flex items-center justify-between"
+>
   <Logo />
-  <nav aria-label="main" class="flex items-center gap-12">
+  <nav aria-label="main" class="hidden lg:flex items-center gap-12">
     <NavLink href="/">Home</NavLink>
     <NavLink href="/menu">Menu</NavLink>
     <NavLink href="/about">About</NavLink>
@@ -22,4 +24,7 @@ import Button from '@/components/Button.astro';
       }
     </Button>
   </nav>
+  <button type="button" class="inline-block lg:hidden">
+    <Icon name="heroicons:bars-3-20-solid" class="h-6 w-6" />
+  </button>
 </header>

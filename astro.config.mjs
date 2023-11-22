@@ -11,7 +11,7 @@ export default defineConfig({
     }),
     icon({
       include: {
-        heroicons: ['arrow-long-right-20-solid'],
+        heroicons: ['*'],
         fe: ['*'],
       },
     }),

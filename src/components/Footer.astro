@@ -31,11 +31,11 @@ const FOOTER_DATA = {
 <footer class="bg-surface-container">
   <nav
     aria-label="footer"
-    class="container mx-auto flex justify-between gap-16 py-24 px-8"
+    class="container mx-auto py-16 px-6 flex flex-col gap-8 lg:py-24 lg:px-8 lg:flex-row lg:justify-between lg:gap-16"
   >
     <div class="flex flex-col gap-4">
       <Logo href="/" />
-      <ul class="mt-7 flex flex-col gap-1">
+      <ul class="flex flex-col gap-1 lg:mt-7">
         {
           FOOTER_DATA.info.map(({ href, text }) => (
             <li>
@@ -102,16 +102,16 @@ const FOOTER_DATA = {
     </div>
   </nav>
   <div
-    class="container mx-auto py-6 px-8 flex justify-between border-t border-divider"
+    class="container mx-auto py-8 px-6 flex flex-col gap-1 border-t border-divider lg:py-6 lg:px-8 lg:flex-row-reverse lg:justify-between"
   >
-    <p class="font-secondary font-medium leading-relaxed text-neutral/60">
-      &copy; 2020 Sweet Delights, Inc. All rights reserved.
-    </p>
     <a
       href="/"
-      class="font-secondary font-medium leading-relaxed text-neutral/60 hover:text-neutral hover:underline focus-visible:text-neutral focus-visible:underline"
+      class="w-fit font-secondary font-medium leading-relaxed text-neutral/60 hover:text-neutral hover:underline focus-visible:text-neutral focus-visible:underline"
     >
       Privacy Policy
     </a>
+    <p class="font-secondary font-medium leading-relaxed text-neutral/60">
+      &copy; 2020 Sweet Delights, Inc. All rights reserved.
+    </p>
   </div>
 </footer>

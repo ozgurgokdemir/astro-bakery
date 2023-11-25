@@ -1,5 +1,32 @@
 ---
+import { Icon } from 'astro-icon/components';
 import MainLayout from '@/layouts/MainLayout.astro';
+import Button from '@/components/Button.astro';
 ---
 
-<MainLayout />
+<MainLayout>
+  <section class="container pt-24 pb-36 flex">
+    <div class="max-w-[724px] flex flex-col gap-12">
+      <h1 class="font-primary font-bold text-[3.75rem]">
+        Sweet Delights Bakery - Where Every Bite <br /> is a Delight!
+      </h1>
+      <p class="font-secondary text-xl leading-relaxed text-neutral/60">
+        Step into our bakery, where every bite is a delight! Explore our
+        irresistible creations, and indulge in homemade goodness.
+      </p>
+      <Button asChild class="w-fit mt-[0.9375rem]">
+        {
+          (className: string) => (
+            <a href="/menu" class={className}>
+              <span>Get a taste</span>
+              <Icon
+                name="heroicons:arrow-long-right-20-solid"
+                class="h-5 w-5"
+              />
+            </a>
+          )
+        }
+      </Button>
+    </div>
+  </section>
+</MainLayout>

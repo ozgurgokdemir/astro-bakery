@@ -1,0 +1,16 @@
+---
+type Props = {
+  slots: Astro['slots'];
+  args?: any[] | undefined;
+};
+
+const { slots, args } = Astro.props;
+
+let children: string = '';
+
+if (slots.has('default')) {
+  children = await slots.render('default', args);
+}
+---
+
+<Fragment set:html={children} />

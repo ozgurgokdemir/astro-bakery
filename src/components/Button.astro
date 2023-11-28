@@ -1,14 +1,16 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 import { cva } from 'class-variance-authority';
+import Children from '@/components/Children.astro';
 
 export const buttonStyles = cva(
   'flex items-center justify-center whitespace-nowrap rounded-xl text-white text-xl',
   {
     variants: {
       variant: {
-        primary: 'bg-primary hover:bg-primary/90',
-        secondary: 'bg-secondary hover:bg-secondary/90',
+        primary: 'bg-primary hover:bg-primary/90 focus-visible:bg-primary/90',
+        secondary:
+          'bg-secondary hover:bg-secondary/90 focus-visible:bg-secondary/90',
       },
       size: {
         medium: 'h-12 gap-2 px-6 font-normal',
@@ -38,17 +40,11 @@ const {
 } = Astro.props;
 
 const styles = buttonStyles({ variant, size, className });
-
-let children: string = '';
-
-if (asChild && Astro.slots.has('default')) {
-  children = await Astro.slots.render('default', [styles]);
-}
 ---
 
 {
   asChild ? (
-    <Fragment set:html={children} />
+    <Children slots={Astro.slots} args={[styles]} />
   ) : (
     <button {type} class={styles} {...props}>
       <slot />

@@ -1,20 +1,31 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 import MainLayout from '@/layouts/MainLayout.astro';
 import Button from '@/components/Button.astro';
+import heroImage from '@/assets/bread.jpg';
 ---
 
 <MainLayout>
-  <section class="container pt-24 pb-36 flex">
-    <div class="max-w-[724px] flex flex-col gap-12">
-      <h1 class="font-primary font-bold text-[3.75rem]">
+  <section
+    class="container lg:pt-24 lg:pb-36 flex flex-col-reverse lg:flex-row gap-6 lg:gap-0"
+  >
+    <div class="lg:max-w-[59.54%] flex flex-col gap-6 lg:gap-9 xl:gap-12">
+      <h1
+        class="font-primary font-bold text-[2.25rem] lg:text-[2.75rem] xl:text-[3.75rem]"
+      >
         Sweet Delights Bakery - Where Every Bite <br /> is a Delight!
       </h1>
-      <p class="font-secondary text-xl leading-relaxed text-neutral/60">
+      <p
+        class="font-secondary text-[1rem] lg:text-[1.125rem] xl:text-[1.25rem] leading-relaxed text-neutral/60"
+      >
         Step into our bakery, where every bite is a delight! Explore our
         irresistible creations, and indulge in homemade goodness.
       </p>
-      <Button asChild class="w-fit mt-[0.9375rem]">
+      <Button
+        asChild
+        class="lg:w-fit mt-[0.5625rem] lg:mt-[0.6875rem] xl:mt-[0.9375rem]"
+      >
         {
           (className: string) => (
             <a href="/menu" class={className}>
@@ -27,6 +38,14 @@ import Button from '@/components/Button.astro';
           )
         }
       </Button>
+    </div>
+    <div class="relative flex-1">
+      <Image
+        src={heroImage}
+        alt="bread"
+        height={740}
+        class="object-cover aspect-video lg:aspect-auto lg:absolute lg:mt-[-18%] xl:mt-[-20%] lg:rotate-[16deg]"
+      />
     </div>
   </section>
 </MainLayout>

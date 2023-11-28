@@ -14,10 +14,10 @@ import Button from '@/components/Button.astro';
     <Button variant="secondary" size="medium" asChild>
       {
         (className: string) => (
-          <NavLink href="/contact" class={`${className} !decoration-inherit`}>
+          <a href="/contact" class={className}>
             <span>Contact</span>
             <Icon name="heroicons:arrow-long-right-20-solid" class="h-5 w-5" />
-          </NavLink>
+          </a>
         )
       }
     </Button>

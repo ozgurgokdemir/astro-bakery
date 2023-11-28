@@ -8,36 +8,11 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <a
-  data-nav-link
   class={cx(
-    'font-primary font-normal text-xl hover:underline decoration-primary',
+    'font-primary font-normal text-xl decoration-primary hover:underline focus-visible:underline',
     className
   )}
   {...props}
 >
   <slot />
 </a>
-
-<style>
-  [data-nav-link][aria-current='page'] {
-    @apply underline decoration-wavy;
-  }
-</style>
-
-<script>
-  const setCurrentNavLink = () => {
-    const { pathname } = window.location;
-
-    const navLinks =
-      document.querySelectorAll<HTMLAnchorElement>('[data-nav-link]');
-
-    navLinks.forEach((navLink) => {
-      const ariaCurrent = pathname === navLink.pathname ? 'page' : 'false';
-      navLink.setAttribute('aria-current', ariaCurrent);
-    });
-  };
-
-  setCurrentNavLink();
-
-  window.addEventListener('hashchange', setCurrentNavLink);
-</script>

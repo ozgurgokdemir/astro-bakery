@@ -1,0 +1,36 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { cx } from 'class-variance-authority';
+import { Image } from 'astro:assets';
+
+type Props = HTMLAttributes<'div'> & {
+  image: ImageMetadata;
+  title: string;
+  description: string;
+};
+
+const { image, title, description, class: className, ...props } = Astro.props;
+---
+
+<div
+  class={cx(
+    'lg:border lg:border-outline lg:rounded-2xl lg:shadow-soft lg:bg-surface-container lg:overflow-hidden',
+    className
+  )}
+  {...props}
+>
+  <Image
+    src={image}
+    alt={title}
+    width={382}
+    class="object-cover aspect-video lg:aspect-4/3 rounded-2xl lg:rounded-none shadow-hard lg:shadow-none"
+  />
+  <div class="space-y-3 pt-5 lg:p-6">
+    <h3
+      class="font-primary font-bold text-primary text-[1.25rem] lg:text-[1.5rem]"
+    >
+      {title}
+    </h3>
+    <p class="font-secondary text-neutral/60 leading-relaxed">{description}</p>
+  </div>
+</div>

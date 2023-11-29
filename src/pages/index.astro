@@ -3,7 +3,32 @@ import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import MainLayout from '@/layouts/MainLayout.astro';
 import Button from '@/components/Button.astro';
+import FeaturedDelightCard from '@/components/FeaturedDelightCard.astro';
 import heroImage from '@/assets/bread.jpg';
+import cinnamonRollsImage from '@/assets/cinnamon-rolls.jpg';
+import artisanalBreadImage from '@/assets/artisanal-bread.jpg';
+import sugarCookiesImage from '@/assets/sugar-cookies.jpg';
+
+const FEATURED_DELIGHTS = [
+  {
+    image: cinnamonRollsImage,
+    title: 'Signature Cinnamon Rolls',
+    description:
+      'Our freshly baked cinnamon rolls are a customer favorite. Made from a secret family recipe, they are generously smothered in sweet cream cheese icing.',
+  },
+  {
+    image: artisanalBreadImage,
+    title: 'Artisanal Bread Selection',
+    description:
+      'Our selection of artisanal bread, including sourdough, whole grain, and ciabatta, is crafted with care, delivering a perfect balance of crusty exterior and soft, fluffy interior.',
+  },
+  {
+    image: sugarCookiesImage,
+    title: 'Butterfly Sugar Cookies',
+    description:
+      "These beautifully decorated sugar cookies come in various shapes and colors. They're perfect for special occasions or just to satisfy a sweet craving.",
+  },
+];
 ---
 
 <MainLayout>
@@ -47,5 +72,29 @@ import heroImage from '@/assets/bread.jpg';
         class="object-cover aspect-video lg:aspect-auto lg:absolute lg:mt-[-18%] xl:mt-[-20%] lg:rotate-[16deg]"
       />
     </div>
+  </section>
+  <section class="container py-16 lg:py-24 flex flex-col gap-8 lg:gap-16">
+    <h2
+      class="font-primary font-bold text-neutral text-[1.75rem] lg:text-[3rem] lg:text-center"
+    >
+      Featured Delights
+    </h2>
+    <div class="flex flex-col lg:flex-row gap-8">
+      {
+        FEATURED_DELIGHTS.map((delight) => (
+          <FeaturedDelightCard {...delight} class="flex-1" />
+        ))
+      }
+    </div>
+    <Button asChild class="lg:w-fit lg:mx-auto mt-[0.4375rem] lg:mt-3">
+      {
+        (className: string) => (
+          <a href="/menu" class={className}>
+            <span>See our menu</span>
+            <Icon name="heroicons:arrow-long-right-20-solid" class="h-5 w-5" />
+          </a>
+        )
+      }
+    </Button>
   </section>
 </MainLayout>

@@ -1,0 +1,42 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { cx } from 'class-variance-authority';
+import Input from '@/components/Input.astro';
+import TextArea from '@/components/TextArea.astro';
+import Button from '@/components/Button.astro';
+
+type Props = HTMLAttributes<'form'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<form
+  class={cx('grid grid-cols-1 lg:grid-cols-2 gap-y-6 gap-x-8', className)}
+  {...props}
+>
+  <Input id="name" label="Name" placeholder="John Doe" />
+  <Input id="email" label="Email" placeholder="john.doe@example.com" />
+  <TextArea
+    id="message"
+    label="Message"
+    placeholder="How can we assist you?"
+    class="lg:col-span-2"
+  />
+  <Button
+    type="submit"
+    variant="secondary"
+    class="lg:w-fit mt-[0.375rem] lg:mt-2 xl:mt-3"
+  >
+    Send message
+  </Button>
+</form>
+
+<script>
+  const form = document.querySelector('form')!;
+
+  function handleFormSubmit(event: SubmitEvent) {
+    event.preventDefault();
+  }
+
+  form.addEventListener('submit', handleFormSubmit);
+</script>

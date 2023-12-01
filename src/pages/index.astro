@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import MainLayout from '@/layouts/MainLayout.astro';
 import Button from '@/components/Button.astro';
+import ContactForm from '@/components/ContactForm.astro';
 import FeaturedDelightCard from '@/components/FeaturedDelightCard.astro';
 import heroImage from '@/assets/bread.jpg';
 import cinnamonRollsImage from '@/assets/cinnamon-rolls.jpg';
@@ -189,6 +190,28 @@ const OPENING_HOURS = [
             )
           }
         </Button>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 lg:py-24 bg-white">
+    <div
+      class="container flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-16"
+    >
+      <div class="flex-1">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195884.7199739243!2d32.76276475!3d39.903376550000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara!5e0!3m2!1str!2str!4v1701429555361!5m2!1str!2str"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full aspect-video lg:aspect-4/3 rounded-2xl shadow-hard"
+        ></iframe>
+      </div>
+      <div class="flex-1 flex flex-col gap-4">
+        <h2
+          class="font-primary font-bold text-neutral text-[1.5rem] lg:text-[2rem] xl:text-[3rem]"
+        >
+          Get in Touch
+        </h2>
+        <ContactForm />
       </div>
     </div>
   </section>

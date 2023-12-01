@@ -1,0 +1,47 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { cx } from 'class-variance-authority';
+
+type Props = HTMLAttributes<'textarea'> & {
+  id: string;
+  label: string;
+};
+
+const { id, label, required = true, class: className, ...props } = Astro.props;
+---
+
+<div class={cx('flex flex-col', className)}>
+  <label for={id} class="font-primary font-bold text-primary text-[1.25rem]">
+    {label}
+  </label>
+  <textarea
+    {id}
+    name={id}
+    {required}
+    rows="1"
+    class="pt-3 pb-[0.6875rem] border-b border-primary outline-none resize-none overflow-y-hidden font-secondary font-normal text-[1rem]"
+    {...props}></textarea>
+</div>
+
+<script>
+  const textarea = document.querySelector('textarea')!;
+
+  const baseHeight = textarea.clientHeight;
+  const computedStyles = getComputedStyle(textarea);
+  const lineHeight = parseInt(computedStyles.lineHeight, 10);
+
+  function handleInput(event: Event) {
+    const textarea = event.target as HTMLTextAreaElement;
+
+    textarea.style.setProperty('height', '0');
+    const totalHeight = textarea.scrollHeight;
+    textarea.style.setProperty('height', 'auto');
+
+    const textHeight = totalHeight - baseHeight + lineHeight;
+    const numberOfLines = textHeight / lineHeight;
+
+    textarea.setAttribute('rows', numberOfLines.toString());
+  }
+
+  textarea.addEventListener('input', handleInput);
+</script>

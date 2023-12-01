@@ -1,0 +1,35 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { cx } from 'class-variance-authority';
+
+type Props = HTMLAttributes<'input'> & {
+  id: string;
+  label: string;
+};
+
+const {
+  id,
+  label,
+  type = 'text',
+  required = true,
+  class: className,
+  ...props
+} = Astro.props;
+---
+
+<div class="flex flex-col">
+  <label for={id} class="font-primary font-bold text-primary text-[1.25rem]">
+    {label}
+  </label>
+  <input
+    {id}
+    name={id}
+    {type}
+    {required}
+    class={cx(
+      'h-12 border-b border-primary outline-none font-secondary font-normal text-[1rem]',
+      className
+    )}
+    {...props}
+  />
+</div>

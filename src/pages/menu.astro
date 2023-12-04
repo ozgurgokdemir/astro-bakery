@@ -1,98 +1,8 @@
 ---
+import menuList from '@/data/menu-list';
 import MainLayout from '@/layouts/MainLayout.astro';
 import PageHeader from '@/components/PageHeader.astro';
 import MenuItemCard from '@/components/MenuItemCard.astro';
-import cinnamonRollsImage from '@/assets/cinnamon-rolls.jpg';
-import artisanalBreadImage from '@/assets/artisanal-bread.jpg';
-import sugarCookiesImage from '@/assets/sugar-cookies.jpg';
-
-const MENU_LIST = [
-  {
-    category: 'Breads',
-    items: [
-      {
-        image: cinnamonRollsImage,
-        title: 'Signature Cinnamon Rolls',
-      },
-      {
-        image: artisanalBreadImage,
-        title: 'Artisanal Bread Selection',
-      },
-      {
-        image: sugarCookiesImage,
-        title: 'Butterfly Sugar Cookies',
-      },
-    ],
-  },
-  {
-    category: 'Cookies',
-    items: [
-      {
-        image: cinnamonRollsImage,
-        title: 'Signature Cinnamon Rolls',
-      },
-      {
-        image: artisanalBreadImage,
-        title: 'Artisanal Bread Selection',
-      },
-      {
-        image: sugarCookiesImage,
-        title: 'Butterfly Sugar Cookies',
-      },
-    ],
-  },
-  {
-    category: 'Pastries',
-    items: [
-      {
-        image: cinnamonRollsImage,
-        title: 'Signature Cinnamon Rolls',
-      },
-      {
-        image: artisanalBreadImage,
-        title: 'Artisanal Bread Selection',
-      },
-      {
-        image: sugarCookiesImage,
-        title: 'Butterfly Sugar Cookies',
-      },
-    ],
-  },
-  {
-    category: 'Cakes',
-    items: [
-      {
-        image: cinnamonRollsImage,
-        title: 'Signature Cinnamon Rolls',
-      },
-      {
-        image: artisanalBreadImage,
-        title: 'Artisanal Bread Selection',
-      },
-      {
-        image: sugarCookiesImage,
-        title: 'Butterfly Sugar Cookies',
-      },
-    ],
-  },
-  {
-    category: 'Others',
-    items: [
-      {
-        image: cinnamonRollsImage,
-        title: 'Signature Cinnamon Rolls',
-      },
-      {
-        image: artisanalBreadImage,
-        title: 'Artisanal Bread Selection',
-      },
-      {
-        image: sugarCookiesImage,
-        title: 'Butterfly Sugar Cookies',
-      },
-    ],
-  },
-];
 ---
 
 <MainLayout>
@@ -103,7 +13,7 @@ const MENU_LIST = [
     />
     <div class="container py-16 lg:py-24 space-y-12">
       {
-        MENU_LIST.map(({ category, items }) => (
+        menuList.map(({ category, items }) => (
           <div class="space-y-6 lg:space-y-8">
             <h2 class="font-primary font-bold text-neutral text-[1.5rem]">
               {category}

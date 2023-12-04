@@ -1,5 +1,6 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
 import MenuItemCard from '@/components/MenuItemCard.astro';
 import cinnamonRollsImage from '@/assets/cinnamon-rolls.jpg';
 import artisanalBreadImage from '@/assets/artisanal-bread.jpg';
@@ -96,19 +97,10 @@ const MENU_LIST = [
 
 <MainLayout>
   <section>
-    <div class="container mt-8 lg:mt-12 space-y-4 lg:text-center">
-      <h1
-        class="font-primary font-bold text-neutral text-[1.75rem] lg:text-[3rem]"
-      >
-        Delightful Menu Selections
-      </h1>
-      <p
-        class="font-secondary text-neutral/60 text-[1rem] lg:text-[1.125rem] leading-relaxed"
-      >
-        Explore the flavors and experiences that await you at Sweet Delights
-        Bakery.
-      </p>
-    </div>
+    <PageHeader
+      heading="Delightful Menu Selections"
+      subheading="Explore the flavors and experiences that await you at Sweet Delights Bakery."
+    />
     <div class="container py-16 lg:py-24 space-y-12">
       {
         MENU_LIST.map(({ category, items }) => (

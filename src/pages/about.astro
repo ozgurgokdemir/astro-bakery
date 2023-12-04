@@ -1,25 +1,17 @@
 ---
 import { Image } from 'astro:assets';
 import MainLayout from '@/layouts/MainLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
 import ContactForm from '@/components/ContactForm.astro';
 import bakeryImage from '@/assets/bakery.jpg';
 ---
 
 <MainLayout>
   <section>
-    <div class="container mt-8 lg:mt-12 space-y-4 lg:text-center">
-      <h1
-        class="font-primary font-bold text-neutral text-[1.75rem] lg:text-[3rem]"
-      >
-        Our Sweet Story
-      </h1>
-      <p
-        class="font-secondary text-neutral/60 text-[1rem] lg:text-[1.125rem] leading-relaxed"
-      >
-        Our journey is a testament to the joy of baking, and we're excited to
-        share our story with you.
-      </p>
-    </div>
+    <PageHeader
+      heading="Our Sweet Story"
+      subheading="Our journey is a testament to the joy of baking, and we're excited to share our story with you."
+    />
     <div class="py-16 lg:py-24">
       <div
         class="container flex flex-col lg:flex-row lg:items-center gap-[1.875rem] lg:gap-16"

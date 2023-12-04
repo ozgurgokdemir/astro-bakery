@@ -1,0 +1,129 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import MenuItemCard from '@/components/MenuItemCard.astro';
+import cinnamonRollsImage from '@/assets/cinnamon-rolls.jpg';
+import artisanalBreadImage from '@/assets/artisanal-bread.jpg';
+import sugarCookiesImage from '@/assets/sugar-cookies.jpg';
+
+const MENU_LIST = [
+  {
+    category: 'Breads',
+    items: [
+      {
+        image: cinnamonRollsImage,
+        title: 'Signature Cinnamon Rolls',
+      },
+      {
+        image: artisanalBreadImage,
+        title: 'Artisanal Bread Selection',
+      },
+      {
+        image: sugarCookiesImage,
+        title: 'Butterfly Sugar Cookies',
+      },
+    ],
+  },
+  {
+    category: 'Cookies',
+    items: [
+      {
+        image: cinnamonRollsImage,
+        title: 'Signature Cinnamon Rolls',
+      },
+      {
+        image: artisanalBreadImage,
+        title: 'Artisanal Bread Selection',
+      },
+      {
+        image: sugarCookiesImage,
+        title: 'Butterfly Sugar Cookies',
+      },
+    ],
+  },
+  {
+    category: 'Pastries',
+    items: [
+      {
+        image: cinnamonRollsImage,
+        title: 'Signature Cinnamon Rolls',
+      },
+      {
+        image: artisanalBreadImage,
+        title: 'Artisanal Bread Selection',
+      },
+      {
+        image: sugarCookiesImage,
+        title: 'Butterfly Sugar Cookies',
+      },
+    ],
+  },
+  {
+    category: 'Cakes',
+    items: [
+      {
+        image: cinnamonRollsImage,
+        title: 'Signature Cinnamon Rolls',
+      },
+      {
+        image: artisanalBreadImage,
+        title: 'Artisanal Bread Selection',
+      },
+      {
+        image: sugarCookiesImage,
+        title: 'Butterfly Sugar Cookies',
+      },
+    ],
+  },
+  {
+    category: 'Others',
+    items: [
+      {
+        image: cinnamonRollsImage,
+        title: 'Signature Cinnamon Rolls',
+      },
+      {
+        image: artisanalBreadImage,
+        title: 'Artisanal Bread Selection',
+      },
+      {
+        image: sugarCookiesImage,
+        title: 'Butterfly Sugar Cookies',
+      },
+    ],
+  },
+];
+---
+
+<MainLayout>
+  <section>
+    <div class="container mt-8 lg:mt-12 space-y-4 lg:text-center">
+      <h1
+        class="font-primary font-bold text-neutral text-[1.75rem] lg:text-[3rem]"
+      >
+        Delightful Menu Selections
+      </h1>
+      <p
+        class="font-secondary text-neutral/60 text-[1rem] lg:text-[1.125rem] leading-relaxed"
+      >
+        Explore the flavors and experiences that await you at Sweet Delights
+        Bakery.
+      </p>
+    </div>
+    <div class="container py-16 lg:py-24 space-y-12">
+      {
+        MENU_LIST.map(({ category, items }) => (
+          <div class="space-y-6 lg:space-y-8">
+            <h2 class="font-primary font-bold text-neutral text-[1.5rem]">
+              {category}
+            </h2>
+            <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+              {items.map(({ image, title }) => (
+                <MenuItemCard {image} {title} class="flex-1" />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</MainLayout>

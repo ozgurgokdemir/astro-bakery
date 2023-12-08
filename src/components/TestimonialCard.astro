@@ -1,0 +1,48 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { cx } from 'class-variance-authority';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
+type Props = HTMLAttributes<'figure'> & {
+  image: ImageMetadata;
+  name: string;
+  text: string;
+};
+
+const { image, name, text, class: className, ...props } = Astro.props;
+---
+
+<figure
+  class={cx(
+    'p-8 flex flex-col gap-6 rounded-2xl border border-outline shadow-soft',
+    className
+  )}
+  {...props}
+>
+  <figcaption class="flex items-center gap-6">
+    <Image
+      src={image}
+      alt={name}
+      width={64}
+      height={64}
+      class="h-12 lg:h-16 aspect-square rounded-full object-cover"
+    />
+    <div>
+      <cite
+        class="font-primary font-normal text-primary text-[1.25rem] lg:text-[1.5rem] not-italic"
+        >{name}</cite
+      >
+      <div class="flex gap-2 text-secondary">
+        <Icon name="heroicons:star-solid" class="h-4 w-4" />
+        <Icon name="heroicons:star-solid" class="h-4 w-4" />
+        <Icon name="heroicons:star-solid" class="h-4 w-4" />
+        <Icon name="heroicons:star-solid" class="h-4 w-4" />
+        <Icon name="heroicons:star-solid" class="h-4 w-4" />
+      </div>
+    </div>
+  </figcaption>
+  <blockquote class="font-secondary text-neutral/60 leading-relaxed">
+    {text}
+  </blockquote>
+</figure>

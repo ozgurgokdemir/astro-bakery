@@ -2,13 +2,28 @@
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import featuredDelights from '@/data/featured-delights';
+import testimonials from '@/data/testimonials';
 import openingHours from '@/data/opening-hours';
 import MainLayout from '@/layouts/MainLayout.astro';
 import Button from '@/components/Button.astro';
 import ContactForm from '@/components/ContactForm.astro';
 import FeaturedDelightCard from '@/components/FeaturedDelightCard.astro';
+import TestimonialCard from '@/components/TestimonialCard.astro';
 import heroImage from '@/assets/bread.jpg';
 import bakeryImage from '@/assets/bakery.jpg';
+
+const chunkSize = Math.floor(testimonials.length / 3);
+const remainder = testimonials.length % chunkSize;
+
+const testimonialsColumn1 = testimonials.slice(
+  0,
+  chunkSize + (remainder > 0 ? 1 : 0)
+);
+const testimonialsColumn2 = testimonials.slice(
+  chunkSize + (remainder > 0 ? 1 : 0),
+  chunkSize * 2 + remainder
+);
+const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
 ---
 
 <MainLayout>
@@ -165,6 +180,70 @@ import bakeryImage from '@/assets/bakery.jpg';
       </div>
     </div>
   </section>
+  <section class="container py-16 lg:py-24 flex flex-col gap-2 lg:gap-16">
+    <h2
+      class="font-primary font-bold text-neutral text-[1.75rem] lg:text-[3rem] lg:text-center"
+    >
+      What People Say
+    </h2>
+    <div
+      id="testimonials"
+      class="group -mx-6 lg:mx-0 relative flex flex-col lg:flex-row lg:gap-8 divide-y divide-divider lg:divide-none"
+      data-show-more="false"
+    >
+      <div
+        class="flex-1 flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
+      >
+        {
+          testimonialsColumn1.map((testimonial) => (
+            <TestimonialCard
+              {...testimonial}
+              class="lg:h-fit lg:bg-surface-container [&:nth-child(n+4)]:group-data-[show-more=false]:hidden lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden"
+            />
+          ))
+        }
+      </div>
+      <div
+        class="flex-1 flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
+      >
+        {
+          testimonialsColumn2.map((testimonial) => (
+            <TestimonialCard
+              {...testimonial}
+              class="lg:h-fit lg:bg-surface-container [&:not(:first-child)]:hidden lg:[&:nth-child(-n+2)]:flex group-data-[show-more=true]:flex"
+            />
+          ))
+        }
+      </div>
+      <div
+        class="flex-1 flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
+      >
+        {
+          testimonialsColumn3.map((testimonial) => (
+            <TestimonialCard
+              {...testimonial}
+              class="lg:h-fit lg:bg-surface-container hidden lg:[&:nth-child(-n+2)]:flex group-data-[show-more=true]:flex"
+            />
+          ))
+        }
+      </div>
+      <div
+        class="h-64 lg:h-80 absolute right-0 lg:-right-4 -bottom-4 left-0 lg:-left-4 flex flex-col group-data-[show-more=true]:hidden border-none"
+      >
+        <div class="flex-1 bg-gradient-to-t from-surface"></div>
+        <div class="py-4 px-6 lg:px-0 bg-surface">
+          <Button
+            variant="secondary"
+            class="mx-auto w-full lg:w-fit"
+            data-show-more-button="testimonials"
+          >
+            <span>Show more</span>
+            <Icon name="heroicons:plus-20-solid" class="h-5 w-5" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="py-16 lg:py-24 bg-white">
     <div
       class="container flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-16"
@@ -188,3 +267,20 @@ import bakeryImage from '@/assets/bakery.jpg';
     </div>
   </section>
 </MainLayout>
+
+<script>
+  const showMoreButtons = document.querySelectorAll<HTMLButtonElement>(
+    '[data-show-more-button]'
+  );
+
+  function handleShowMore(event: Event) {
+    const button = event.currentTarget as HTMLButtonElement;
+    const containerId = button.dataset.showMoreButton!;
+    const container = document.getElementById(containerId)!;
+    container.dataset.showMore = 'true';
+  }
+
+  showMoreButtons.forEach((button) =>
+    button.addEventListener('click', handleShowMore)
+  );
+</script>

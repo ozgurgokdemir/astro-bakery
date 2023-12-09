@@ -15,18 +15,18 @@ const { image, name, text, class: className, ...props } = Astro.props;
 
 <figure
   class={cx(
-    'p-8 flex flex-col gap-6 rounded-2xl border border-outline shadow-soft',
+    'p-6 lg:p-8 flex flex-col gap-4 lg:gap-6 lg:rounded-2xl lg:border border-outline lg:shadow-soft',
     className
   )}
   {...props}
 >
-  <figcaption class="flex items-center gap-6">
+  <figcaption class="flex items-center gap-4 lg:gap-6">
     <Image
       src={image}
       alt={name}
       width={64}
       height={64}
-      class="h-12 lg:h-16 aspect-square rounded-full object-cover"
+      class="h-12 w-12 lg:h-16 lg:w-16 rounded-full object-cover"
     />
     <div>
       <cite
@@ -34,11 +34,11 @@ const { image, name, text, class: className, ...props } = Astro.props;
         >{name}</cite
       >
       <div class="flex gap-2 text-secondary">
-        <Icon name="heroicons:star-solid" class="h-4 w-4" />
-        <Icon name="heroicons:star-solid" class="h-4 w-4" />
-        <Icon name="heroicons:star-solid" class="h-4 w-4" />
-        <Icon name="heroicons:star-solid" class="h-4 w-4" />
-        <Icon name="heroicons:star-solid" class="h-4 w-4" />
+        <Icon name="heroicons:star-solid" class="h-3 lg:h-4 w-3 lg:w-4" />
+        <Icon name="heroicons:star-solid" class="h-3 lg:h-4 w-3 lg:w-4" />
+        <Icon name="heroicons:star-solid" class="h-3 lg:h-4 w-3 lg:w-4" />
+        <Icon name="heroicons:star-solid" class="h-3 lg:h-4 w-3 lg:w-4" />
+        <Icon name="heroicons:star-solid" class="h-3 lg:h-4 w-3 lg:w-4" />
       </div>
     </div>
   </figcaption>

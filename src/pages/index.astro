@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import featuredDelights from '@/data/featured-delights';
 import testimonials from '@/data/testimonials';
 import openingHours from '@/data/opening-hours';
+import imageGallery from '@/data/image-gallery';
 import MainLayout from '@/layouts/MainLayout.astro';
 import Button from '@/components/Button.astro';
 import ContactForm from '@/components/ContactForm.astro';
@@ -131,6 +132,70 @@ const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
             )
           }
         </Button>
+      </div>
+    </div>
+  </section>
+  <section class="container py-16 lg:py-24 flex flex-col gap-8 lg:gap-16">
+    <h2
+      class="font-primary font-bold text-neutral text-[1.75rem] lg:text-[3rem] lg:text-center"
+    >
+      Pastry Portraits
+    </h2>
+    <div
+      id="gallery"
+      class="group -mx-6 lg:mx-0 relative flex flex-col lg:flex-row lg:gap-8"
+      data-show-more="false"
+    >
+      <div class="flex-1 flex flex-col lg:gap-8">
+        {
+          imageGallery.firstColumn.map((image, index) => (
+            <Image
+              src={image}
+              alt={`gallery photo ${index + 1}`}
+              width={384}
+              class="lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b lg:border-none border-surface [&:nth-child(n+3)]:group-data-[show-more=false]:hidden"
+            />
+          ))
+        }
+      </div>
+      <div class="flex-1 flex flex-col lg:gap-8">
+        {
+          imageGallery.secondColumn.map((image, index) => (
+            <Image
+              src={image}
+              alt={`gallery photo ${index + 4}`}
+              width={384}
+              class="lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b lg:border-none border-surface [&:nth-child(n+3)]:group-data-[show-more=false]:hidden"
+            />
+          ))
+        }
+      </div>
+      <div class="flex-1 flex flex-col lg:gap-8">
+        {
+          imageGallery.thirdColumn.map((image, index) => (
+            <Image
+              src={image}
+              alt={`gallery photo ${index + 7}`}
+              width={384}
+              class="lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b last:border-none lg:border-none border-surface hidden lg:block group-data-[show-more=true]:block lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden"
+            />
+          ))
+        }
+      </div>
+      <div
+        class="h-64 lg:h-80 absolute right-0 lg:-right-4 -bottom-4 left-0 lg:-left-4 flex flex-col group-data-[show-more=true]:hidden border-none"
+      >
+        <div class="flex-1 bg-gradient-to-t from-surface"></div>
+        <div class="py-4 px-6 lg:px-0 bg-surface">
+          <Button
+            variant="secondary"
+            class="mx-auto w-full lg:w-fit"
+            data-show-more-button="gallery"
+          >
+            <span>Show more</span>
+            <Icon name="heroicons:plus-20-solid" class="h-5 w-5" />
+          </Button>
+        </div>
       </div>
     </div>
   </section>

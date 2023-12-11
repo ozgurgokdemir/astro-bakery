@@ -6,11 +6,11 @@ type Props = {
 
 const { slots, args } = Astro.props;
 
-let children: string = '';
-
-if (slots.has('default')) {
-  children = await slots.render('default', args);
+if (!slots.has('default')) {
+  throw new Error('The parent component does not have any child elements.');
 }
+
+const children = await slots.render('default', args);
 ---
 
 <Fragment set:html={children} />

@@ -1,0 +1,50 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { cx } from 'class-variance-authority';
+import { Icon } from 'astro-icon/components';
+import Button from '@/components/Button.astro';
+
+type Props = HTMLAttributes<'div'> & {
+  containerId: string;
+};
+
+const { containerId, class: className, ...props } = Astro.props;
+---
+
+<show-more data-container-id={containerId}>
+  <div
+    class={cx(
+      'h-64 lg:h-80 absolute right-0 lg:-right-4 -bottom-4 left-0 lg:-left-4 flex flex-col group-data-[show-more=true]:hidden border-none',
+      className
+    )}
+    {...props}
+  >
+    <div class="flex-1 bg-gradient-to-t from-surface"></div>
+    <div class="py-4 px-6 lg:px-0 bg-surface">
+      <Button variant="secondary" class="mx-auto w-full lg:w-fit">
+        <span>Show more</span>
+        <Icon name="heroicons:plus-20-solid" class="h-5 w-5" />
+      </Button>
+    </div>
+  </div>
+</show-more>
+
+<script>
+  class ShowMore extends HTMLElement {
+    constructor() {
+      super();
+
+      const containerId = this.dataset.containerId!;
+      const button = this.querySelector('button')!;
+
+      function handleShowMore() {
+        const container = document.getElementById(containerId)!;
+        container.dataset.showMore = 'true';
+      }
+
+      button.addEventListener('click', handleShowMore);
+    }
+  }
+
+  customElements.define('show-more', ShowMore);
+</script>

@@ -5,13 +5,14 @@ import featuredDelights from '@/data/featured-delights';
 import testimonials from '@/data/testimonials';
 import openingHours from '@/data/opening-hours';
 import imageGallery from '@/data/image-gallery';
-import MainLayout from '@/layouts/MainLayout.astro';
-import Button from '@/components/Button.astro';
-import ContactForm from '@/components/ContactForm.astro';
-import FeaturedDelightCard from '@/components/FeaturedDelightCard.astro';
-import TestimonialCard from '@/components/TestimonialCard.astro';
 import heroImage from '@/assets/bread.jpg';
 import bakeryImage from '@/assets/bakery.jpg';
+import MainLayout from '@/layouts/MainLayout.astro';
+import Button from '@/components/Button.astro';
+import ShowMore from '@/components/ShowMore.astro';
+import FeaturedDelightCard from '@/components/FeaturedDelightCard.astro';
+import TestimonialCard from '@/components/TestimonialCard.astro';
+import ContactForm from '@/components/ContactForm.astro';
 
 const chunkSize = Math.floor(testimonials.length / 3);
 const remainder = testimonials.length % chunkSize;
@@ -182,21 +183,7 @@ const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
           ))
         }
       </div>
-      <div
-        class="h-64 lg:h-80 absolute right-0 lg:-right-4 -bottom-4 left-0 lg:-left-4 flex flex-col group-data-[show-more=true]:hidden border-none"
-      >
-        <div class="flex-1 bg-gradient-to-t from-surface"></div>
-        <div class="py-4 px-6 lg:px-0 bg-surface">
-          <Button
-            variant="secondary"
-            class="mx-auto w-full lg:w-fit"
-            data-show-more-button="gallery"
-          >
-            <span>Show more</span>
-            <Icon name="heroicons:plus-20-solid" class="h-5 w-5" />
-          </Button>
-        </div>
-      </div>
+      <ShowMore containerId="gallery" />
     </div>
   </section>
   <section class="py-16 lg:py-24 bg-surface-container">
@@ -292,21 +279,7 @@ const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
           ))
         }
       </div>
-      <div
-        class="h-64 lg:h-80 absolute right-0 lg:-right-4 -bottom-4 left-0 lg:-left-4 flex flex-col group-data-[show-more=true]:hidden border-none"
-      >
-        <div class="flex-1 bg-gradient-to-t from-surface"></div>
-        <div class="py-4 px-6 lg:px-0 bg-surface">
-          <Button
-            variant="secondary"
-            class="mx-auto w-full lg:w-fit"
-            data-show-more-button="testimonials"
-          >
-            <span>Show more</span>
-            <Icon name="heroicons:plus-20-solid" class="h-5 w-5" />
-          </Button>
-        </div>
-      </div>
+      <ShowMore containerId="testimonials" />
     </div>
   </section>
   <section class="py-16 lg:py-24 bg-white">
@@ -332,20 +305,3 @@ const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
     </div>
   </section>
 </MainLayout>
-
-<script>
-  const showMoreButtons = document.querySelectorAll<HTMLButtonElement>(
-    '[data-show-more-button]'
-  );
-
-  function handleShowMore(event: Event) {
-    const button = event.currentTarget as HTMLButtonElement;
-    const containerId = button.dataset.showMoreButton!;
-    const container = document.getElementById(containerId)!;
-    container.dataset.showMore = 'true';
-  }
-
-  showMoreButtons.forEach((button) =>
-    button.addEventListener('click', handleShowMore)
-  );
-</script>

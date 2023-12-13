@@ -2,30 +2,17 @@
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import featuredDelights from '@/data/featured-delights';
-import testimonials from '@/data/testimonials';
-import openingHours from '@/data/opening-hours';
 import imageGallery from '@/data/image-gallery';
+import openingHours from '@/data/opening-hours';
+import testimonials from '@/data/testimonials';
 import heroImage from '@/assets/bread.jpg';
 import bakeryImage from '@/assets/bakery.jpg';
 import MainLayout from '@/layouts/MainLayout.astro';
 import Button from '@/components/Button.astro';
-import ShowMore from '@/components/ShowMore.astro';
 import FeaturedDelightCard from '@/components/FeaturedDelightCard.astro';
+import ShowMore from '@/components/ShowMore.astro';
 import TestimonialCard from '@/components/TestimonialCard.astro';
 import ContactForm from '@/components/ContactForm.astro';
-
-const chunkSize = Math.floor(testimonials.length / 3);
-const remainder = testimonials.length % chunkSize;
-
-const testimonialsColumn1 = testimonials.slice(
-  0,
-  chunkSize + (remainder > 0 ? 1 : 0)
-);
-const testimonialsColumn2 = testimonials.slice(
-  chunkSize + (remainder > 0 ? 1 : 0),
-  chunkSize * 2 + remainder
-);
-const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
 ---
 
 <MainLayout>
@@ -255,7 +242,7 @@ const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
         class="flex-1 flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
       >
         {
-          testimonialsColumn1.map((testimonial) => (
+          testimonials.firstColumn.map((testimonial) => (
             <li class="group/item [&:nth-child(n+4)]:group-data-[show-more=false]:hidden lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
               <TestimonialCard
                 {...testimonial}
@@ -269,7 +256,7 @@ const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
         class="flex-1 flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
       >
         {
-          testimonialsColumn2.map((testimonial) => (
+          testimonials.secondColumn.map((testimonial) => (
             <li class="[&:not(:first-child)]:hidden lg:[&:nth-child(-n+2)]:flex group-data-[show-more=true]:flex">
               <TestimonialCard
                 {...testimonial}
@@ -283,7 +270,7 @@ const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
         class="flex-1 hidden group-data-[show-more=true]:flex lg:flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
       >
         {
-          testimonialsColumn3.map((testimonial) => (
+          testimonials.thirdColumn.map((testimonial) => (
             <li class="group/item lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
               <TestimonialCard
                 {...testimonial}

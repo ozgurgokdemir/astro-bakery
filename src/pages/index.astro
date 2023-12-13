@@ -144,45 +144,53 @@ const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
     </h2>
     <div
       id="gallery"
-      class="group -mx-6 lg:mx-0 relative flex flex-col lg:flex-row lg:gap-8"
+      class="group -mx-6 sm:mx-0 relative flex flex-col lg:flex-row lg:gap-8"
       data-show-more="false"
     >
-      <div class="flex-1 flex flex-col lg:gap-8">
+      <ul class="flex-1 flex flex-col lg:gap-8">
         {
           imageGallery.firstColumn.map((image, index) => (
-            <Image
-              src={image}
-              alt={`gallery photo ${index + 1}`}
-              width={384}
-              class="lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b lg:border-none border-surface [&:nth-child(n+3)]:group-data-[show-more=false]:hidden"
-            />
+            <li class="[&:nth-child(n+4)]:group-data-[show-more=false]:hidden lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
+              <Image
+                src={image}
+                alt={`gallery photo ${index + 1}`}
+                width={384}
+                class="w-full lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 lg:border-none border-surface"
+              />
+            </li>
           ))
         }
-      </div>
-      <div class="flex-1 flex flex-col lg:gap-8">
+      </ul>
+      <ul class="flex-1 flex flex-col lg:gap-8">
         {
           imageGallery.secondColumn.map((image, index) => (
-            <Image
-              src={image}
-              alt={`gallery photo ${index + 4}`}
-              width={384}
-              class="lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b lg:border-none border-surface [&:nth-child(n+3)]:group-data-[show-more=false]:hidden"
-            />
+            <li class="[&:not(:first-child)]:hidden lg:[&:nth-child(-n+2)]:flex group-data-[show-more=true]:flex">
+              <Image
+                src={image}
+                alt={`gallery photo ${index + 4}`}
+                width={384}
+                class="w-full lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 lg:border-none border-surface"
+              />
+            </li>
           ))
         }
-      </div>
-      <div class="flex-1 flex flex-col lg:gap-8">
+      </ul>
+      <ul
+        class="flex-1 hidden group-data-[show-more=true]:flex lg:flex flex-col lg:gap-8"
+      >
         {
           imageGallery.thirdColumn.map((image, index) => (
-            <Image
-              src={image}
-              alt={`gallery photo ${index + 7}`}
-              width={384}
-              class="lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b last:border-none lg:border-none border-surface hidden lg:block group-data-[show-more=true]:block lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden"
-            />
+            <li class="group/item lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
+              <Image
+                src={image}
+                alt={`gallery photo ${index + 7}`}
+                width={384}
+                class="w-full lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 group-last/item:border-none lg:border-none border-surface"
+              />
+            </li>
           ))
         }
-      </div>
+      </ul>
       <ShowMore containerId="gallery" />
     </div>
   </section>
@@ -232,7 +240,7 @@ const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
       </div>
     </div>
   </section>
-  <section class="container py-16 lg:py-24 flex flex-col gap-2 lg:gap-16">
+  <section class="container py-16 lg:py-24 flex flex-col gap-8 lg:gap-16">
     <h2
       class="font-primary font-bold text-neutral text-[1.75rem] lg:text-[3rem] lg:text-center"
     >
@@ -240,46 +248,52 @@ const testimonialsColumn3 = testimonials.slice(chunkSize * 2 + remainder);
     </h2>
     <div
       id="testimonials"
-      class="group -mx-6 lg:mx-0 relative flex flex-col lg:flex-row lg:gap-8 divide-y divide-divider lg:divide-none"
+      class="group -mx-6 sm:mx-0 relative flex flex-col lg:flex-row lg:gap-8 divide-y divide-divider lg:divide-none"
       data-show-more="false"
     >
-      <div
+      <ul
         class="flex-1 flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
       >
         {
           testimonialsColumn1.map((testimonial) => (
-            <TestimonialCard
-              {...testimonial}
-              class="lg:h-fit lg:bg-surface-container [&:nth-child(n+4)]:group-data-[show-more=false]:hidden lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden"
-            />
+            <li class="group/item [&:nth-child(n+4)]:group-data-[show-more=false]:hidden lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
+              <TestimonialCard
+                {...testimonial}
+                class="group-first/item:pt-0 lg:group-first/item:p-8 lg:h-fit lg:bg-surface-container"
+              />
+            </li>
           ))
         }
-      </div>
-      <div
+      </ul>
+      <ul
         class="flex-1 flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
       >
         {
           testimonialsColumn2.map((testimonial) => (
-            <TestimonialCard
-              {...testimonial}
-              class="lg:h-fit lg:bg-surface-container [&:not(:first-child)]:hidden lg:[&:nth-child(-n+2)]:flex group-data-[show-more=true]:flex"
-            />
+            <li class="[&:not(:first-child)]:hidden lg:[&:nth-child(-n+2)]:flex group-data-[show-more=true]:flex">
+              <TestimonialCard
+                {...testimonial}
+                class="lg:h-fit lg:bg-surface-container"
+              />
+            </li>
           ))
         }
-      </div>
-      <div
-        class="flex-1 flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
+      </ul>
+      <ul
+        class="flex-1 hidden group-data-[show-more=true]:flex lg:flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
       >
         {
           testimonialsColumn3.map((testimonial) => (
-            <TestimonialCard
-              {...testimonial}
-              class="lg:h-fit lg:bg-surface-container hidden lg:[&:nth-child(-n+2)]:flex group-data-[show-more=true]:flex"
-            />
+            <li class="group/item lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
+              <TestimonialCard
+                {...testimonial}
+                class="group-last/item:pb-0 lg:group-last/item:p-8 lg:h-fit lg:bg-surface-container"
+              />
+            </li>
           ))
         }
-      </div>
-      <ShowMore containerId="testimonials" />
+      </ul>
+      <ShowMore containerId="testimonials" class="border-none" />
     </div>
   </section>
   <section class="py-16 lg:py-24 bg-white">

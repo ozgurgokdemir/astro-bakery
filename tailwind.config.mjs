@@ -38,6 +38,7 @@ export default {
       },
       aspectRatio: {
         '4/3': '4 / 3',
+        '3/4': '3 / 4',
       },
       boxShadow: {
         soft: '0px 0px 16px 0px rgba(0, 0, 0, 0.10)',

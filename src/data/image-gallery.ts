@@ -1,17 +1,17 @@
-import kristenDrewPhoto from '@/assets/kirsten-drew-n49BjsFf5dI.jpg';
-import toaHeftibaPhoto from '@/assets/toa-heftiba-S1Z_Cudra0k.jpg';
-import ulyssePointchevalPhoto from '@/assets/ulysse-pointcheval-1WmlAiYgnoI.jpg';
-import harperNguyenPhoto from '@/assets/harper-nguyen-j6DH45Bflho.jpg';
-import fabioTrainaPhoto from '@/assets/fabio-traina-6i6NJgCJ8k0.jpg';
-import bakeryPhoto from '@/assets/bakery.jpg';
-import karinaKunglaPhoto from '@/assets/karina-kungla-knVYO9dW8_Y.jpg';
-import ddpPhoto from '@/assets/ddp-CceG6jpl19M.jpg';
-import kilyanSockalingumPhoto from '@/assets/kilyan-sockalingum-08EXImz-EYc.jpg';
+import kristenDrewPhoto from '@/assets/kirsten-drew-n49BjsFf5dI-unsplash.jpg';
+import kilyanSockalingumPhoto from '@/assets/kilyan-sockalingum-08EXImz-EYc-unsplash.jpg';
+import kobbyMendezPhoto from '@/assets/kobby-mendez-WXJ33HOrzvE-unsplash.jpg';
+import emmaValerioPhoto from '@/assets/emma-valerio-wTcbl8L18t4-unsplash.jpg';
+import shaynaDouglasPhoto from '@/assets/shayna-douglas-MTt6IJGWvws-unsplash.jpg';
+import antonPhoto from '@/assets/anton-8K3OGQAqgl8-unsplash.jpg';
+import karinaKunglaPhoto from '@/assets/karina-kungla-knVYO9dW8_Y-unsplash.jpg';
+import ulyssePointchevalPhoto from '@/assets/ulysse-pointcheval-1WmlAiYgnoI-unsplash.jpg';
+import kobbyMendezPhoto2 from '@/assets/kobby-mendez-oMUpSsQAlG8-unsplash.jpg';
 
 const imageGallery = {
-  firstColumn: [kristenDrewPhoto, toaHeftibaPhoto, ulyssePointchevalPhoto],
-  secondColumn: [harperNguyenPhoto, fabioTrainaPhoto, bakeryPhoto],
-  thirdColumn: [karinaKunglaPhoto, ddpPhoto, kilyanSockalingumPhoto],
+  firstColumn: [kristenDrewPhoto, kilyanSockalingumPhoto, kobbyMendezPhoto],
+  secondColumn: [emmaValerioPhoto, shaynaDouglasPhoto, antonPhoto],
+  thirdColumn: [karinaKunglaPhoto, ulyssePointchevalPhoto, kobbyMendezPhoto2],
 };
 
 export default imageGallery;

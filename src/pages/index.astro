@@ -6,7 +6,8 @@ import imageGallery from '@/data/image-gallery';
 import openingHours from '@/data/opening-hours';
 import testimonials from '@/data/testimonials';
 import heroImage from '@/assets/bread.jpg';
-import bakeryImage from '@/assets/bakery.jpg';
+import bakeryImage from '@/assets/austin-park-xAS8pWGMMGA-unsplash.jpg';
+import openingHoursImage from '@/assets/fabio-traina-6i6NJgCJ8k0-unsplash.jpg';
 import MainLayout from '@/layouts/MainLayout.astro';
 import Button from '@/components/Button.astro';
 import FeaturedDelightCard from '@/components/FeaturedDelightCard.astro';
@@ -88,7 +89,7 @@ import ContactForm from '@/components/ContactForm.astro';
       <div class="flex-1">
         <Image
           src={bakeryImage}
-          alt="our bakery"
+          alt="sweet delights bakery entrance"
           width={576}
           class="object-cover aspect-video lg:aspect-4/3 rounded-2xl shadow-hard"
         />
@@ -137,12 +138,12 @@ import ContactForm from '@/components/ContactForm.astro';
       <ul class="flex-1 flex flex-col lg:gap-8">
         {
           imageGallery.firstColumn.map((image, index) => (
-            <li class="[&:nth-child(n+4)]:group-data-[show-more=false]:hidden lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
+            <li class="group/item [&:nth-child(n+4)]:group-data-[show-more=false]:hidden lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
               <Image
                 src={image}
                 alt={`gallery photo ${index + 1}`}
                 width={384}
-                class="w-full lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 lg:border-none border-surface"
+                class="w-full aspect-3/4 lg:group-even/item:aspect-square lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 lg:border-none border-surface"
               />
             </li>
           ))
@@ -156,7 +157,7 @@ import ContactForm from '@/components/ContactForm.astro';
                 src={image}
                 alt={`gallery photo ${index + 4}`}
                 width={384}
-                class="w-full lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 lg:border-none border-surface"
+                class="w-full aspect-3/4 lg:aspect-[0.818/1] lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 lg:border-none border-surface"
               />
             </li>
           ))
@@ -172,7 +173,7 @@ import ContactForm from '@/components/ContactForm.astro';
                 src={image}
                 alt={`gallery photo ${index + 7}`}
                 width={384}
-                class="w-full lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 group-last/item:border-none lg:border-none border-surface"
+                class="w-full aspect-3/4 lg:group-even/item:aspect-square lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 group-last/item:border-none lg:border-none border-surface"
               />
             </li>
           ))
@@ -187,10 +188,10 @@ import ContactForm from '@/components/ContactForm.astro';
     >
       <div class="flex-1">
         <Image
-          src={bakeryImage}
-          alt="our bakery"
+          src={openingHoursImage}
+          alt="sweet delights bakery"
           width={576}
-          class="object-cover aspect-video lg:aspect-4/3 rounded-2xl shadow-hard"
+          class="object-cover object-top aspect-video lg:aspect-4/3 rounded-2xl shadow-hard"
         />
       </div>
       <div class="flex-1 flex flex-col gap-4">

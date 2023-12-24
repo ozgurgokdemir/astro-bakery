@@ -4,11 +4,7 @@ import icon from 'astro-icon';
 
 export default defineConfig({
   integrations: [
-    tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
+    tailwind(),
     icon({
       include: {
         heroicons: ['*'],

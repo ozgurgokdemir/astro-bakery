@@ -3,7 +3,6 @@ import '@fontsource/pacifico';
 import '@fontsource/merriweather/400.css';
 import '@fontsource/merriweather/700.css';
 import '@fontsource/roboto';
-import '@/styles/globals.css';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 
@@ -27,7 +26,7 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="font-primary text-neutral bg-surface">
+  <body class="font-primary text bg">
     <Header />
     <main>
       <slot />

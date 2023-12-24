@@ -1,48 +1,98 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
+const FONT_SIZE = {
+  xs: '0.75rem',
+  sm: '0.875rem',
+  md: '1rem',
+  lg: '1.125rem',
+  xl: '1.25rem',
+  '2xl': '1.5rem',
+  '3xl': '1.875rem',
+  '4xl': '2.25rem',
+  '5xl': '3rem',
+  '6xl': '3.75rem',
+};
+
+const LINE_HEIGHT = {
+  heading: 1.25,
+  body: 1.6,
+};
+
+const BRAND_COLOR = '6deg 90% 16%';
+
+const SHADOW = '0 0 1rem 0';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
+    fontFamily: {
+      primary: ['Merriweather', ...fontFamily.serif],
+      secondary: ['Roboto', ...fontFamily.sans],
+      brand: ['Pacifico', ...fontFamily.serif],
+    },
+    fontWeight: {
+      regular: 400,
+      bold: 700,
+    },
+    fontSize: {
+      ...FONT_SIZE,
+      'body-xs': [FONT_SIZE['xs'], LINE_HEIGHT['body']],
+      'body-sm': [FONT_SIZE['sm'], LINE_HEIGHT['body']],
+      'body-md': [FONT_SIZE['md'], LINE_HEIGHT['body']],
+      'body-lg': [FONT_SIZE['lg'], LINE_HEIGHT['body']],
+      'body-xl': [FONT_SIZE['xl'], LINE_HEIGHT['body']],
+      'heading-xl': [FONT_SIZE['xl'], LINE_HEIGHT['heading']],
+      'heading-2xl': [FONT_SIZE['2xl'], LINE_HEIGHT['heading']],
+      'heading-3xl': [FONT_SIZE['3xl'], LINE_HEIGHT['heading']],
+      'heading-4xl': [FONT_SIZE['4xl'], LINE_HEIGHT['heading']],
+      'heading-5xl': [FONT_SIZE['5xl'], LINE_HEIGHT['heading']],
+      'heading-6xl': [FONT_SIZE['6xl'], LINE_HEIGHT['heading']],
+    },
+    lineHeight: LINE_HEIGHT,
+    backgroundColor: {
+      DEFAULT: 'hsl(46deg 24% 93% / <alpha-value>)',
+      surface: 'hsl(46deg 24% 89% / <alpha-value>)',
+      'surface-secondary': 'hsl(0deg 33% 99% / <alpha-value>)',
+      fill: 'hsl(186deg 90% 16% / <alpha-value>)',
+      'fill-hover': 'hsl(187deg 54% 25% / <alpha-value>)',
+      'fill-brand': `hsl(${BRAND_COLOR} / <alpha-value>)`,
+      'fill-brand-hover': 'hsl(6deg 54% 25% / <alpha-value>)',
+    },
+    textColor: {
+      DEFAULT: 'hsl(60deg 2% 9% / <alpha-value>)',
+      secondary: 'hsl(60deg 2% 37% / <alpha-value>)',
+      brand: `hsl(${BRAND_COLOR} / <alpha-value>)`,
+      'on-bg-fill': 'hsl(0deg 33% 99% / <alpha-value>)',
+      'on-bg-fill-brand': 'hsl(0deg 33% 99% / <alpha-value>)',
+    },
+    borderColor: {
+      primary: 'hsl(46deg 24% 81% / <alpha-value>)',
+      secondary: 'hsl(46deg 24% 85% / <alpha-value>)',
+      brand: 'hsl(6deg 90% 16% / <alpha-value>)',
+    },
+    boxShadow: {
+      'of-bg-surface': `${SHADOW} hsl(45deg 12% 80% / 0.75)`,
+      'of-bg-fill': `${SHADOW} hsl(186deg 90% 16% / 0.25)`,
+      'of-bg-fill-brand': `${SHADOW} hsl(${BRAND_COLOR} / 0.25)`,
+    },
     screens: {
       sm: '640px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
     },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1.5rem',
+        lg: '2rem',
+      },
+    },
     extend: {
-      fontFamily: {
-        logo: ['Pacifico', ...fontFamily.serif],
-        primary: ['var(--font-primary)', ...fontFamily.serif],
-        secondary: ['var(--font-secondary)', ...fontFamily.sans],
-      },
-      colors: {
-        neutral: 'hsl(var(--color-neutral) / <alpha-value>)',
-        primary: 'hsl(var(--color-primary) / <alpha-value>)',
-        secondary: 'hsl(var(--color-secondary) / <alpha-value>)',
-        surface: 'hsl(var(--color-surface) / <alpha-value>)',
-        'surface-container':
-          'hsl(var(--color-surface-container) / <alpha-value>)',
-        outline: 'hsl(var(--color-outline) / <alpha-value>)',
-        divider: 'hsl(var(--color-divider) / <alpha-value>)',
-      },
-      lineHeight: {
-        relaxed: '1.75',
-      },
-      container: {
-        center: true,
-        padding: {
-          DEFAULT: '1.5rem',
-          lg: '2rem',
-        },
-      },
       aspectRatio: {
         '4/3': '4 / 3',
         '3/4': '3 / 4',
-      },
-      boxShadow: {
-        soft: '0px 0px 16px 0px rgba(0, 0, 0, 0.10)',
-        hard: '0px 0px 16px 0px rgba(0, 0, 0, 0.25)',
       },
     },
   },

@@ -4,16 +4,17 @@ import { cva } from 'class-variance-authority';
 import Children from '@/components/Children.astro';
 
 export const buttonStyles = cva(
-  'flex items-center justify-center whitespace-nowrap rounded-xl text-white text-xl',
+  'flex items-center justify-center whitespace-nowrap rounded-md font-primary text-heading-xl',
   {
     variants: {
       variant: {
-        primary: 'bg-primary hover:bg-primary/90 focus-visible:bg-primary/90',
+        primary:
+          'bg-fill-brand text-on-bg-fill-brand hover:bg-fill-brand-hover hover:shadow-of-bg-fill-brand focus-visible:bg-fill-brand-hover focus-visible:shadow-of-bg-fill-brand',
         secondary:
-          'bg-secondary hover:bg-secondary/90 focus-visible:bg-secondary/90',
+          'bg-fill text-on-bg-fill hover:bg-fill-hover hover:shadow-of-bg-fill focus-visible:bg-fill-hover focus-visible:shadow-of-bg-fill',
       },
       size: {
-        medium: 'h-12 gap-2 px-6 font-normal',
+        medium: 'h-12 gap-2 px-6 font-regular',
         large: 'h-14 gap-3 px-10 font-bold',
       },
     },
@@ -21,7 +22,7 @@ export const buttonStyles = cva(
       variant: 'primary',
       size: 'large',
     },
-  }
+  },
 );
 
 type Props = HTMLAttributes<'button'> & {

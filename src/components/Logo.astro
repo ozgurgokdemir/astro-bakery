@@ -6,6 +6,10 @@ type Props = HTMLAttributes<'a'>;
 const { href = '/', ...props } = Astro.props;
 ---
 
-<a {href} class="font-logo text-primary text-2xl lg:text-[2rem]" {...props}>
+<a
+  {href}
+  class="font-brand text-heading-2xl text-brand lg:text-heading-4xl"
+  {...props}
+>
   Sweet Delights.
 </a>

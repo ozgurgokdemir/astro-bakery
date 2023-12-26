@@ -73,8 +73,8 @@ export default {
     },
     boxShadow: {
       'of-bg-surface': `${SHADOW} hsl(45deg 12% 80% / 0.75)`,
-      'of-bg-fill': `${SHADOW} hsl(186deg 90% 16% / 0.25)`,
-      'of-bg-fill-brand': `${SHADOW} hsl(${BRAND_COLOR} / 0.25)`,
+      'of-bg-fill': `${SHADOW} hsl(186deg 90% 16% / 0.1)`,
+      'of-bg-fill-brand': `${SHADOW} hsl(${BRAND_COLOR} / 0.1)`,
     },
     screens: {
       sm: '640px',

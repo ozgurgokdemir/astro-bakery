@@ -5,13 +5,13 @@ import NavLink from '@/components/NavLink.astro';
 import Button from '@/components/Button.astro';
 ---
 
-<header class="container py-8 lg:py-12 flex items-center justify-between">
+<header class="container flex items-center justify-between py-8 lg:py-12">
   <Logo />
-  <nav aria-label="main" class="hidden lg:flex items-center gap-12">
+  <nav aria-label="main" class="hidden items-center gap-12 lg:flex">
     <NavLink href="/">Home</NavLink>
     <NavLink href="/menu">Menu</NavLink>
     <NavLink href="/about">About</NavLink>
-    <Button variant="secondary" size="medium" asChild>
+    <Button size="medium" asChild>
       {
         (className: string) => (
           <a href="/contact" class={className}>

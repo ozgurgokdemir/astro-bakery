@@ -5,7 +5,7 @@ import featuredDelights from '@/data/featured-delights';
 import imageGallery from '@/data/image-gallery';
 import openingHours from '@/data/opening-hours';
 import testimonials from '@/data/testimonials';
-import heroImage from '@/assets/bread.jpg';
+import heroImage from '@/assets/ceyda-ciftci-OSwM-hfJoBQ-unsplash.jpg';
 import bakeryImage from '@/assets/austin-park-xAS8pWGMMGA-unsplash.jpg';
 import openingHoursImage from '@/assets/fabio-traina-6i6NJgCJ8k0-unsplash.jpg';
 import MainLayout from '@/layouts/MainLayout.astro';
@@ -18,23 +18,23 @@ import ContactForm from '@/components/ContactForm.astro';
 
 <MainLayout>
   <section
-    class="container lg:pt-24 lg:pb-36 flex flex-col-reverse lg:flex-row gap-6 lg:gap-0"
+    class="container flex flex-col-reverse gap-6 lg:flex-row lg:gap-0 lg:pb-24 lg:pt-36"
   >
-    <div class="lg:max-w-[59.54%] flex flex-col gap-6 lg:gap-9 xl:gap-12">
+    <div class="flex flex-col gap-3 lg:max-w-md lg:gap-8 xl:max-w-[40rem]">
       <h1
-        class="font-primary font-bold text-[2.25rem] lg:text-[2.75rem] xl:text-[3.75rem]"
+        class="font-primary text-heading-4xl font-bold lg:text-heading-5xl xl:text-heading-6xl"
       >
-        Sweet Delights Bakery - Where Every Bite <br /> is a Delight!
+        Where Every Crumb Tells a Delicious Tale
       </h1>
       <p
-        class="font-secondary text-[1rem] lg:text-[1.125rem] xl:text-[1.25rem] leading-relaxed text-neutral/60"
+        class="font-secondary text-body-md text-secondary lg:text-body-lg xl:text-body-xl"
       >
         Step into our bakery, where every bite is a delight! Explore our
         irresistible creations, and indulge in homemade goodness.
       </p>
       <Button
         asChild
-        class="lg:w-fit mt-[0.5625rem] lg:mt-[0.6875rem] xl:mt-[0.9375rem]"
+        class="mt-[0.75rem] lg:mt-[0.375rem] lg:w-fit xl:mt-[0.46875rem]"
       >
         {
           (className: string) => (
@@ -49,29 +49,33 @@ import ContactForm from '@/components/ContactForm.astro';
         }
       </Button>
     </div>
-    <div class="relative flex-1">
+    <div
+      class="relative aspect-video flex-1 overflow-hidden rounded-md drop-shadow lg:aspect-auto lg:overflow-visible"
+    >
       <Image
+        id="hero-image"
         src={heroImage}
-        alt="bread"
-        height={740}
-        class="object-cover aspect-video lg:aspect-auto lg:absolute lg:mt-[-18%] xl:mt-[-20%] lg:rotate-[16deg]"
+        alt="sweet delights bakery interior"
+        width={512}
+        height={512}
+        class="pointer-events-none absolute top-1/2 w-full -translate-y-1/2 lg:right-0 lg:max-w-md xl:max-w-lg"
       />
     </div>
   </section>
-  <section class="container py-16 lg:py-24 flex flex-col gap-8 lg:gap-16">
+  <section class="container flex flex-col gap-8 py-16 lg:gap-16 lg:py-24">
     <h2
-      class="font-primary font-bold text-neutral text-[1.75rem] lg:text-[3rem] lg:text-center"
+      class="text-neutral font-primary text-[1.75rem] font-bold lg:text-center lg:text-[3rem]"
     >
       Featured Delights
     </h2>
-    <div class="flex flex-col lg:flex-row gap-8">
+    <div class="flex flex-col gap-8 lg:flex-row">
       {
         featuredDelights.map((delight) => (
           <FeaturedDelightCard {...delight} class="flex-1" />
         ))
       }
     </div>
-    <Button asChild class="lg:w-fit lg:mx-auto mt-[0.4375rem] lg:mt-3">
+    <Button asChild class="mt-[0.4375rem] lg:mx-auto lg:mt-3 lg:w-fit">
       {
         (className: string) => (
           <a href="/menu" class={className}>
@@ -82,33 +86,33 @@ import ContactForm from '@/components/ContactForm.astro';
       }
     </Button>
   </section>
-  <section class="py-16 lg:py-24 bg-surface-container">
+  <section class="bg-surface-container py-16 lg:py-24">
     <div
-      class="container flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-16"
+      class="container flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-16"
     >
       <div class="flex-1">
         <Image
           src={bakeryImage}
           alt="sweet delights bakery entrance"
           width={576}
-          class="object-cover aspect-video lg:aspect-4/3 rounded-2xl shadow-hard"
+          class="shadow-hard aspect-video rounded-2xl object-cover lg:aspect-4/3"
         />
       </div>
-      <div class="flex-1 flex flex-col gap-4">
+      <div class="flex flex-1 flex-col gap-4">
         <h2
-          class="font-primary font-bold text-neutral text-[1.5rem] lg:text-[2rem] xl:text-[3rem]"
+          class="text-neutral font-primary text-[1.5rem] font-bold lg:text-[2rem] xl:text-[3rem]"
         >
           Welcome to Our Bakery
         </h2>
         <p
-          class="font-secondary text-neutral/60 text-[1rem] xl:text-[1.25rem] leading-relaxed"
+          class="text-neutral/60 leading-relaxed font-secondary text-[1rem] xl:text-[1.25rem]"
         >
           At Sweet Delights Bakery, we're all about crafting delightful moments.
           Our passion for baking is a testament to the joy of sharing treats
           with loved ones. Join us on a journey of flavors, textures, and
           heartwarming experiences. Welcome to our world of sweet delights.
         </p>
-        <Button asChild class="lg:w-fit mt-[0.375rem] lg:mt-2 xl:mt-3">
+        <Button asChild class="mt-[0.375rem] lg:mt-2 lg:w-fit xl:mt-3">
           {
             (className: string) => (
               <a href="/about" class={className}>
@@ -124,47 +128,47 @@ import ContactForm from '@/components/ContactForm.astro';
       </div>
     </div>
   </section>
-  <section class="container py-16 lg:py-24 flex flex-col gap-8 lg:gap-16">
+  <section class="container flex flex-col gap-8 py-16 lg:gap-16 lg:py-24">
     <h2
-      class="font-primary font-bold text-neutral text-[1.75rem] lg:text-[3rem] lg:text-center"
+      class="text-neutral font-primary text-[1.75rem] font-bold lg:text-center lg:text-[3rem]"
     >
       Pastry Portraits
     </h2>
     <div
       id="gallery"
-      class="group -mx-6 sm:mx-0 relative flex flex-col lg:flex-row lg:gap-8"
+      class="group relative -mx-6 flex flex-col sm:mx-0 lg:flex-row lg:gap-8"
       data-show-more="false"
     >
-      <ul class="flex-1 flex flex-col lg:gap-8">
+      <ul class="flex flex-1 flex-col lg:gap-8">
         {
           imageGallery.firstColumn.map((image, index) => (
-            <li class="group/item [&:nth-child(n+4)]:group-data-[show-more=false]:hidden lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
+            <li class="group/item lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden [&:nth-child(n+4)]:group-data-[show-more=false]:hidden">
               <Image
                 src={image}
                 alt={`gallery photo ${index + 1}`}
                 width={384}
-                class="w-full aspect-3/4 lg:group-even/item:aspect-square lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 lg:border-none border-surface"
+                class="shadow-soft lg:shadow-hard lg:bg-surface-container border-surface aspect-3/4 w-full border-b-2 lg:rounded-2xl lg:border-none lg:group-even/item:aspect-square"
               />
             </li>
           ))
         }
       </ul>
-      <ul class="flex-1 flex flex-col lg:gap-8">
+      <ul class="flex flex-1 flex-col lg:gap-8">
         {
           imageGallery.secondColumn.map((image, index) => (
-            <li class="[&:not(:first-child)]:hidden lg:[&:nth-child(-n+2)]:flex group-data-[show-more=true]:flex">
+            <li class="group-data-[show-more=true]:flex [&:not(:first-child)]:hidden lg:[&:nth-child(-n+2)]:flex">
               <Image
                 src={image}
                 alt={`gallery photo ${index + 4}`}
                 width={384}
-                class="w-full aspect-3/4 lg:aspect-[0.818/1] lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 lg:border-none border-surface"
+                class="shadow-soft lg:shadow-hard lg:bg-surface-container border-surface aspect-3/4 w-full border-b-2 lg:aspect-[0.818/1] lg:rounded-2xl lg:border-none"
               />
             </li>
           ))
         }
       </ul>
       <ul
-        class="flex-1 hidden group-data-[show-more=true]:flex lg:flex flex-col lg:gap-8"
+        class="hidden flex-1 flex-col group-data-[show-more=true]:flex lg:flex lg:gap-8"
       >
         {
           imageGallery.thirdColumn.map((image, index) => (
@@ -173,7 +177,7 @@ import ContactForm from '@/components/ContactForm.astro';
                 src={image}
                 alt={`gallery photo ${index + 7}`}
                 width={384}
-                class="w-full aspect-3/4 lg:group-even/item:aspect-square lg:rounded-2xl shadow-soft lg:shadow-hard lg:bg-surface-container border-b-2 group-last/item:border-none lg:border-none border-surface"
+                class="shadow-soft lg:shadow-hard lg:bg-surface-container border-surface aspect-3/4 w-full border-b-2 group-last/item:border-none lg:rounded-2xl lg:border-none lg:group-even/item:aspect-square"
               />
             </li>
           ))
@@ -182,37 +186,37 @@ import ContactForm from '@/components/ContactForm.astro';
       <ShowMore containerId="gallery" />
     </div>
   </section>
-  <section class="py-16 lg:py-24 bg-surface-container">
+  <section class="bg-surface-container py-16 lg:py-24">
     <div
-      class="container flex flex-col lg:flex-row-reverse lg:items-center gap-6 lg:gap-16"
+      class="container flex flex-col gap-6 lg:flex-row-reverse lg:items-center lg:gap-16"
     >
       <div class="flex-1">
         <Image
           src={openingHoursImage}
           alt="sweet delights bakery"
           width={576}
-          class="object-cover object-top aspect-video lg:aspect-4/3 rounded-2xl shadow-hard"
+          class="shadow-hard aspect-video rounded-2xl object-cover object-top lg:aspect-4/3"
         />
       </div>
-      <div class="flex-1 flex flex-col gap-4">
+      <div class="flex flex-1 flex-col gap-4">
         <h2
-          class="font-primary font-bold text-neutral text-[1.5rem] lg:text-[2rem] xl:text-[3rem]"
+          class="text-neutral font-primary text-[1.5rem] font-bold lg:text-[2rem] xl:text-[3rem]"
         >
           Opening Hours
         </h2>
         <div
-          class="font-secondary text-neutral/60 text-[1rem] lg:text-[1.25rem] leading-relaxed"
+          class="text-neutral/60 leading-relaxed font-secondary text-[1rem] lg:text-[1.25rem]"
         >
           {
             openingHours.map(({ days, hours }) => (
-              <div class="py-2 flex justify-between border-b border-divider">
+              <div class="border-divider flex justify-between border-b py-2">
                 <p>{days}</p>
                 <p>{hours}</p>
               </div>
             ))
           }
         </div>
-        <Button asChild class="lg:w-fit mt-[0.375rem] lg:mt-2 xl:mt-3">
+        <Button asChild class="mt-[0.375rem] lg:mt-2 lg:w-fit xl:mt-3">
           {
             (className: string) => (
               <a href="/about" class={className}>
@@ -228,54 +232,54 @@ import ContactForm from '@/components/ContactForm.astro';
       </div>
     </div>
   </section>
-  <section class="container py-16 lg:py-24 flex flex-col gap-8 lg:gap-16">
+  <section class="container flex flex-col gap-8 py-16 lg:gap-16 lg:py-24">
     <h2
-      class="font-primary font-bold text-neutral text-[1.75rem] lg:text-[3rem] lg:text-center"
+      class="text-neutral font-primary text-[1.75rem] font-bold lg:text-center lg:text-[3rem]"
     >
       What People Say
     </h2>
     <div
       id="testimonials"
-      class="group -mx-6 sm:mx-0 relative flex flex-col lg:flex-row lg:gap-8 divide-y divide-divider lg:divide-none"
+      class="divide-divider group relative -mx-6 flex flex-col divide-y sm:mx-0 lg:flex-row lg:gap-8 lg:divide-none"
       data-show-more="false"
     >
       <ul
-        class="flex-1 flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
+        class="divide-divider flex flex-1 flex-col divide-y lg:gap-8 lg:divide-none"
       >
         {
           testimonials.firstColumn.map((testimonial) => (
-            <li class="group/item [&:nth-child(n+4)]:group-data-[show-more=false]:hidden lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
+            <li class="group/item lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden [&:nth-child(n+4)]:group-data-[show-more=false]:hidden">
               <TestimonialCard
                 {...testimonial}
-                class="group-first/item:pt-0 lg:group-first/item:p-8 lg:h-fit lg:bg-surface-container"
+                class="lg:bg-surface-container group-first/item:pt-0 lg:h-fit lg:group-first/item:p-8"
               />
             </li>
           ))
         }
       </ul>
       <ul
-        class="flex-1 flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
+        class="divide-divider flex flex-1 flex-col divide-y lg:gap-8 lg:divide-none"
       >
         {
           testimonials.secondColumn.map((testimonial) => (
-            <li class="[&:not(:first-child)]:hidden lg:[&:nth-child(-n+2)]:flex group-data-[show-more=true]:flex">
+            <li class="group-data-[show-more=true]:flex [&:not(:first-child)]:hidden lg:[&:nth-child(-n+2)]:flex">
               <TestimonialCard
                 {...testimonial}
-                class="lg:h-fit lg:bg-surface-container"
+                class="lg:bg-surface-container lg:h-fit"
               />
             </li>
           ))
         }
       </ul>
       <ul
-        class="flex-1 hidden group-data-[show-more=true]:flex lg:flex flex-col lg:gap-8 divide-y divide-divider lg:divide-none"
+        class="divide-divider hidden flex-1 flex-col divide-y group-data-[show-more=true]:flex lg:flex lg:gap-8 lg:divide-none"
       >
         {
           testimonials.thirdColumn.map((testimonial) => (
             <li class="group/item lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
               <TestimonialCard
                 {...testimonial}
-                class="group-last/item:pb-0 lg:group-last/item:p-8 lg:h-fit lg:bg-surface-container"
+                class="lg:bg-surface-container group-last/item:pb-0 lg:h-fit lg:group-last/item:p-8"
               />
             </li>
           ))
@@ -284,21 +288,21 @@ import ContactForm from '@/components/ContactForm.astro';
       <ShowMore containerId="testimonials" class="border-none" />
     </div>
   </section>
-  <section class="py-16 lg:py-24 bg-white">
+  <section class="bg-white py-16 lg:py-24">
     <div
-      class="container flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-16"
+      class="container flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-16"
     >
       <div class="flex-1">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195884.7199739243!2d32.76276475!3d39.903376550000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara!5e0!3m2!1str!2str!4v1701429555361!5m2!1str!2str"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          class="w-full aspect-video lg:aspect-4/3 rounded-2xl shadow-hard"
+          class="shadow-hard aspect-video w-full rounded-2xl lg:aspect-4/3"
         ></iframe>
       </div>
-      <div class="flex-1 flex flex-col gap-4">
+      <div class="flex flex-1 flex-col gap-4">
         <h2
-          class="font-primary font-bold text-neutral text-[1.5rem] lg:text-[2rem] xl:text-[3rem]"
+          class="text-neutral font-primary text-[1.5rem] font-bold lg:text-[2rem] xl:text-[3rem]"
         >
           Get in Touch
         </h2>
@@ -307,3 +311,23 @@ import ContactForm from '@/components/ContactForm.astro';
     </div>
   </section>
 </MainLayout>
+
+<style>
+  #hero-image {
+    -webkit-mask-image: url('/hero-image-mask-desktop.png');
+    mask-image: url('/hero-image-mask-desktop.png');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+  }
+
+  @media (max-width: 1023px) {
+    #hero-image {
+      -webkit-mask-image: url('/hero-image-mask-mobile.png');
+      mask-image: url('/hero-image-mask-mobile.png');
+    }
+  }
+</style>

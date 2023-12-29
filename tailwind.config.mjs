@@ -76,6 +76,9 @@ export default {
       'of-bg-fill': `${SHADOW} hsl(186deg 90% 16% / 0.1)`,
       'of-bg-fill-brand': `${SHADOW} hsl(${BRAND_COLOR} / 0.1)`,
     },
+    dropShadow: {
+      DEFAULT: '0 0 1rem hsl(45deg 12% 80% / 0.75)',
+    },
     screens: {
       sm: '640px',
       md: '768px',

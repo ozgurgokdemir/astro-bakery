@@ -13,7 +13,7 @@ const featuredDelights = [
     image: artisanalBreadImage,
     title: 'Artisanal Bread Selection',
     description:
-      'Our selection of artisanal bread, including sourdough, whole grain, and ciabatta, is crafted with care, delivering a perfect balance of crusty exterior and soft, fluffy interior.',
+      'Our selection of artisanal bread, including sourdough, whole grain, and ciabatta, is crafted with care, delivering a perfect balance of crusty exterior and fluffy interior.',
   },
   {
     image: sugarCookiesImage,

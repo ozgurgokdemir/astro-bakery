@@ -63,19 +63,28 @@ import ContactForm from '@/components/ContactForm.astro';
     </div>
   </section>
   <section class="container flex flex-col gap-8 py-16 lg:gap-16 lg:py-24">
-    <h2
-      class="text-neutral font-primary text-[1.75rem] font-bold lg:text-center lg:text-[3rem]"
-    >
-      Featured Delights
-    </h2>
-    <div class="flex flex-col gap-8 lg:flex-row">
+    <header class="space-y-3 lg:text-center">
+      <h2
+        class="font-primary text-heading-3xl font-bold text lg:text-heading-4xl"
+      >
+        Featured Delights
+      </h2>
+      <p
+        class="font-secondary text-body-md font-regular text-secondary lg:text-body-lg"
+      >
+        Irresistible creations that steal the spotlight from every palate
+      </p>
+    </header>
+    <ul class="flex flex-col gap-8 lg:flex-row">
       {
         featuredDelights.map((delight) => (
-          <FeaturedDelightCard {...delight} class="flex-1" />
+          <li class="flex-1">
+            <FeaturedDelightCard {...delight} />
+          </li>
         ))
       }
-    </div>
-    <Button asChild class="mt-[0.4375rem] lg:mx-auto lg:mt-3 lg:w-fit">
+    </ul>
+    <Button asChild class="lg:mx-auto lg:w-fit">
       {
         (className: string) => (
           <a href="/menu" class={className}>

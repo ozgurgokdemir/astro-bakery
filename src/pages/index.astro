@@ -95,7 +95,7 @@ import ContactForm from '@/components/ContactForm.astro';
       }
     </Button>
   </section>
-  <section class="bg-surface-container py-16 lg:py-24">
+  <section class="bg-surface py-16 lg:py-24">
     <div
       class="container flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-16"
     >
@@ -104,24 +104,25 @@ import ContactForm from '@/components/ContactForm.astro';
           src={bakeryImage}
           alt="sweet delights bakery entrance"
           width={576}
-          class="shadow-hard aspect-video rounded-2xl object-cover lg:aspect-4/3"
+          class="aspect-video w-full rounded-md object-cover shadow-of-bg-surface lg:aspect-4/3"
         />
       </div>
-      <div class="flex flex-1 flex-col gap-4">
+      <div class="flex flex-1 flex-col gap-3 lg:gap-4">
         <h2
-          class="text-neutral font-primary text-[1.5rem] font-bold lg:text-[2rem] xl:text-[3rem]"
+          class="font-primary text-heading-2xl font-bold text lg:text-heading-3xl xl:text-heading-4xl"
         >
           Welcome to Our Bakery
         </h2>
-        <p
-          class="text-neutral/60 leading-relaxed font-secondary text-[1rem] xl:text-[1.25rem]"
-        >
+        <p class="font-secondary text-body-md text-secondary xl:text-body-xl">
           At Sweet Delights Bakery, we're all about crafting delightful moments.
           Our passion for baking is a testament to the joy of sharing treats
           with loved ones. Join us on a journey of flavors, textures, and
           heartwarming experiences. Welcome to our world of sweet delights.
         </p>
-        <Button asChild class="mt-[0.375rem] lg:mt-2 lg:w-fit xl:mt-3">
+        <Button
+          asChild
+          class="mt-[0.6375rem] lg:mt-[0.46875rem] lg:w-fit xl:mt-[0.5625rem]"
+        >
           {
             (className: string) => (
               <a href="/about" class={className}>

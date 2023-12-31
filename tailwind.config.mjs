@@ -20,6 +20,8 @@ const LINE_HEIGHT = {
 
 const BRAND_COLOR = '6deg 90% 16%';
 
+const BG_COLOR = '46deg 24% 93%';
+
 const SHADOW = '0 0 1rem 0';
 
 /** @type {import('tailwindcss').Config} */
@@ -50,8 +52,11 @@ export default {
       'heading-6xl': [FONT_SIZE['6xl'], LINE_HEIGHT['heading']],
     },
     lineHeight: LINE_HEIGHT,
+    colors: {
+      bg: `hsl(${BG_COLOR} / <alpha-value>)`,
+    },
     backgroundColor: {
-      DEFAULT: 'hsl(46deg 24% 93% / <alpha-value>)',
+      DEFAULT: `hsl(${BG_COLOR} / <alpha-value>)`,
       surface: 'hsl(46deg 24% 89% / <alpha-value>)',
       'surface-secondary': 'hsl(0deg 33% 99% / <alpha-value>)',
       fill: 'hsl(186deg 90% 16% / <alpha-value>)',
@@ -70,6 +75,7 @@ export default {
       primary: 'hsl(46deg 24% 81% / <alpha-value>)',
       secondary: 'hsl(46deg 24% 85% / <alpha-value>)',
       brand: 'hsl(6deg 90% 16% / <alpha-value>)',
+      bg: `hsl(${BG_COLOR} / <alpha-value>)`,
     },
     boxShadow: {
       'of-bg-surface': `${SHADOW} hsl(45deg 12% 80% / 0.75)`,

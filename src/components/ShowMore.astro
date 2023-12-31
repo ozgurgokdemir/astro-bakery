@@ -14,13 +14,13 @@ const { containerId, class: className, ...props } = Astro.props;
 <show-more
   data-container-id={containerId}
   class={cx(
-    'h-64 lg:h-80 absolute right-0 sm:-right-6 lg:-right-8 -bottom-4 left-0 sm:-left-6 lg:-left-8 flex flex-col group-data-[show-more=true]:hidden',
-    className
+    'absolute -bottom-4 left-0 right-0 flex h-64 flex-col group-data-[show-more=true]:hidden sm:-left-6 sm:-right-6 lg:-left-8 lg:-right-8 lg:h-80',
+    className,
   )}
   {...props}
 >
-  <div class="flex-1 bg-gradient-to-t from-surface"></div>
-  <div class="py-4 px-6 lg:px-0 bg-surface">
+  <div class="flex-1 bg-gradient-to-t from-bg"></div>
+  <div class="bg px-6 py-4 lg:px-0">
     <Button variant="secondary" class="mx-auto w-full lg:w-fit">
       <span>Show more</span>
       <Icon name="heroicons:plus-20-solid" class="h-5 w-5" />

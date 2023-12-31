@@ -139,11 +139,18 @@ import ContactForm from '@/components/ContactForm.astro';
     </div>
   </section>
   <section class="container flex flex-col gap-8 py-16 lg:gap-16 lg:py-24">
-    <h2
-      class="text-neutral font-primary text-[1.75rem] font-bold lg:text-center lg:text-[3rem]"
-    >
-      Pastry Portraits
-    </h2>
+    <header class="space-y-3 lg:text-center">
+      <h2
+        class="font-primary text-heading-3xl font-bold text lg:text-heading-4xl"
+      >
+        Pastry Portraits
+      </h2>
+      <p
+        class="font-secondary text-body-md font-regular text-secondary lg:text-body-lg"
+      >
+        Capturing the essence of our delectable creations
+      </p>
+    </header>
     <div
       id="gallery"
       class="group relative -mx-6 flex flex-col sm:mx-0 lg:flex-row lg:gap-8"
@@ -157,7 +164,7 @@ import ContactForm from '@/components/ContactForm.astro';
                 src={image}
                 alt={`gallery photo ${index + 1}`}
                 width={384}
-                class="shadow-soft lg:shadow-hard lg:bg-surface-container border-surface aspect-3/4 w-full border-b-2 lg:rounded-2xl lg:border-none lg:group-even/item:aspect-square"
+                class="border-bg aspect-3/4 w-full border-b-2 shadow-of-bg-surface lg:rounded-md lg:border-none lg:group-even/item:aspect-square"
               />
             </li>
           ))
@@ -171,7 +178,7 @@ import ContactForm from '@/components/ContactForm.astro';
                 src={image}
                 alt={`gallery photo ${index + 4}`}
                 width={384}
-                class="shadow-soft lg:shadow-hard lg:bg-surface-container border-surface aspect-3/4 w-full border-b-2 lg:aspect-[0.818/1] lg:rounded-2xl lg:border-none"
+                class="border-bg aspect-3/4 w-full border-b-2 shadow-of-bg-surface lg:aspect-[0.818/1] lg:rounded-md lg:border-none"
               />
             </li>
           ))
@@ -187,7 +194,7 @@ import ContactForm from '@/components/ContactForm.astro';
                 src={image}
                 alt={`gallery photo ${index + 7}`}
                 width={384}
-                class="shadow-soft lg:shadow-hard lg:bg-surface-container border-surface aspect-3/4 w-full border-b-2 group-last/item:border-none lg:rounded-2xl lg:border-none lg:group-even/item:aspect-square"
+                class="border-bg aspect-3/4 w-full border-b-2 shadow-of-bg-surface group-last/item:border-none lg:rounded-md lg:border-none lg:group-even/item:aspect-square"
               />
             </li>
           ))

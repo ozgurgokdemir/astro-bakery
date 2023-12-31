@@ -164,7 +164,7 @@ import ContactForm from '@/components/ContactForm.astro';
                 src={image}
                 alt={`gallery photo ${index + 1}`}
                 width={384}
-                class="border-bg aspect-3/4 w-full border-b-2 shadow-of-bg-surface lg:rounded-md lg:border-none lg:group-even/item:aspect-square"
+                class="aspect-3/4 w-full border-b-2 border-bg shadow-of-bg-surface lg:rounded-md lg:border-none lg:group-even/item:aspect-square"
               />
             </li>
           ))
@@ -178,7 +178,7 @@ import ContactForm from '@/components/ContactForm.astro';
                 src={image}
                 alt={`gallery photo ${index + 4}`}
                 width={384}
-                class="border-bg aspect-3/4 w-full border-b-2 shadow-of-bg-surface lg:aspect-[0.818/1] lg:rounded-md lg:border-none"
+                class="aspect-3/4 w-full border-b-2 border-bg shadow-of-bg-surface lg:aspect-[0.818/1] lg:rounded-md lg:border-none"
               />
             </li>
           ))
@@ -194,7 +194,7 @@ import ContactForm from '@/components/ContactForm.astro';
                 src={image}
                 alt={`gallery photo ${index + 7}`}
                 width={384}
-                class="border-bg aspect-3/4 w-full border-b-2 shadow-of-bg-surface group-last/item:border-none lg:rounded-md lg:border-none lg:group-even/item:aspect-square"
+                class="aspect-3/4 w-full border-b-2 border-bg shadow-of-bg-surface group-last/item:border-none lg:rounded-md lg:border-none lg:group-even/item:aspect-square"
               />
             </li>
           ))
@@ -203,7 +203,7 @@ import ContactForm from '@/components/ContactForm.astro';
       <ShowMore containerId="gallery" />
     </div>
   </section>
-  <section class="bg-surface-container py-16 lg:py-24">
+  <section class="bg-surface py-16 lg:py-24">
     <div
       class="container flex flex-col gap-6 lg:flex-row-reverse lg:items-center lg:gap-16"
     >
@@ -212,28 +212,29 @@ import ContactForm from '@/components/ContactForm.astro';
           src={openingHoursImage}
           alt="sweet delights bakery"
           width={576}
-          class="shadow-hard aspect-video rounded-2xl object-cover object-top lg:aspect-4/3"
+          class="aspect-video w-full rounded-md object-cover object-top shadow-of-bg-surface lg:aspect-4/3"
         />
       </div>
-      <div class="flex flex-1 flex-col gap-4">
+      <div class="flex flex-1 flex-col gap-2 lg:gap-4">
         <h2
-          class="text-neutral font-primary text-[1.5rem] font-bold lg:text-[2rem] xl:text-[3rem]"
+          class="font-primary text-heading-2xl font-bold text lg:text-heading-3xl xl:text-heading-4xl"
         >
           Opening Hours
         </h2>
-        <div
-          class="text-neutral/60 leading-relaxed font-secondary text-[1rem] lg:text-[1.25rem]"
-        >
+        <ul class="font-secondary text-body-md text-secondary xl:text-body-lg">
           {
             openingHours.map(({ days, hours }) => (
-              <div class="border-divider flex justify-between border-b py-2">
+              <li class="flex justify-between border-b border-primary py-3 last:border-none">
                 <p>{days}</p>
                 <p>{hours}</p>
-              </div>
+              </li>
             ))
           }
-        </div>
-        <Button asChild class="mt-[0.375rem] lg:mt-2 lg:w-fit xl:mt-3">
+        </ul>
+        <Button
+          asChild
+          class="mt-[0.25rem] lg:mt-[0.234375rem] lg:w-fit xl:mt-[0.28125rem]"
+        >
           {
             (className: string) => (
               <a href="/about" class={className}>

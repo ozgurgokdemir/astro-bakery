@@ -22,6 +22,8 @@ const BRAND_COLOR = '6deg 90% 16%';
 
 const BG_COLOR = '46deg 24% 93%';
 
+const FILL_COLOR = '186deg 90% 16%';
+
 const SHADOW = '0 0 1rem 0';
 
 /** @type {import('tailwindcss').Config} */
@@ -59,7 +61,7 @@ export default {
       DEFAULT: `hsl(${BG_COLOR} / <alpha-value>)`,
       surface: 'hsl(46deg 24% 89% / <alpha-value>)',
       'surface-secondary': 'hsl(0deg 33% 99% / <alpha-value>)',
-      fill: 'hsl(186deg 90% 16% / <alpha-value>)',
+      fill: `hsl(${FILL_COLOR} / <alpha-value>)`,
       'fill-hover': 'hsl(187deg 54% 25% / <alpha-value>)',
       'fill-brand': `hsl(${BRAND_COLOR} / <alpha-value>)`,
       'fill-brand-hover': 'hsl(6deg 54% 25% / <alpha-value>)',
@@ -68,6 +70,7 @@ export default {
       DEFAULT: 'hsl(60deg 2% 9% / <alpha-value>)',
       secondary: 'hsl(60deg 2% 37% / <alpha-value>)',
       brand: `hsl(${BRAND_COLOR} / <alpha-value>)`,
+      fill: `hsl(${FILL_COLOR} / <alpha-value>)`,
       'on-bg-fill': 'hsl(0deg 33% 99% / <alpha-value>)',
       'on-bg-fill-brand': 'hsl(0deg 33% 99% / <alpha-value>)',
     },
@@ -79,7 +82,7 @@ export default {
     },
     boxShadow: {
       'of-bg-surface': `${SHADOW} hsl(45deg 12% 80% / 0.75)`,
-      'of-bg-fill': `${SHADOW} hsl(186deg 90% 16% / 0.1)`,
+      'of-bg-fill': `${SHADOW} hsl(${FILL_COLOR} / 0.1)`,
       'of-bg-fill-brand': `${SHADOW} hsl(${BRAND_COLOR} / 0.1)`,
       none: '0 0 #0000',
     },

@@ -251,53 +251,60 @@ import ContactForm from '@/components/ContactForm.astro';
     </div>
   </section>
   <section class="container flex flex-col gap-8 py-16 lg:gap-16 lg:py-24">
-    <h2
-      class="text-neutral font-primary text-[1.75rem] font-bold lg:text-center lg:text-[3rem]"
-    >
-      What People Say
-    </h2>
+    <header class="space-y-3 lg:text-center">
+      <h2
+        class="font-primary text-heading-3xl font-bold text lg:text-heading-4xl"
+      >
+        What People Say
+      </h2>
+      <p
+        class="font-secondary text-body-md font-regular text-secondary lg:text-body-lg"
+      >
+        Hear what our customers have to say about their sweet experiences
+      </p>
+    </header>
     <div
       id="testimonials"
-      class="divide-divider group relative -mx-6 flex flex-col divide-y sm:mx-0 lg:flex-row lg:gap-8 lg:divide-none"
+      class="group relative -mx-6 flex flex-col divide-y divide-primary sm:mx-0 lg:flex-row lg:gap-8 lg:divide-none"
       data-show-more="false"
     >
       <ul
-        class="divide-divider flex flex-1 flex-col divide-y lg:gap-8 lg:divide-none"
+        class="flex flex-1 flex-col divide-y divide-primary lg:gap-8 lg:divide-none"
       >
         {
           testimonials.firstColumn.map((testimonial) => (
             <li class="group/item lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden [&:nth-child(n+4)]:group-data-[show-more=false]:hidden">
               <TestimonialCard
                 {...testimonial}
-                class="lg:bg-surface-container group-first/item:pt-0 lg:h-fit lg:group-first/item:p-8"
+                class="group-first/item:pt-0 lg:h-fit lg:bg-surface lg:group-first/item:p-8"
               />
             </li>
           ))
         }
       </ul>
       <ul
-        class="divide-divider flex flex-1 flex-col divide-y lg:gap-8 lg:divide-none"
+        class="flex flex-1 flex-col divide-y divide-primary lg:gap-8 lg:divide-none"
       >
         {
           testimonials.secondColumn.map((testimonial) => (
             <li class="group-data-[show-more=true]:flex [&:not(:first-child)]:hidden lg:[&:nth-child(-n+2)]:flex">
               <TestimonialCard
                 {...testimonial}
-                class="lg:bg-surface-container lg:h-fit"
+                class="lg:h-fit lg:bg-surface"
               />
             </li>
           ))
         }
       </ul>
       <ul
-        class="divide-divider hidden flex-1 flex-col divide-y group-data-[show-more=true]:flex lg:flex lg:gap-8 lg:divide-none"
+        class="hidden flex-1 flex-col divide-y divide-primary group-data-[show-more=true]:flex lg:flex lg:gap-8 lg:divide-none"
       >
         {
           testimonials.thirdColumn.map((testimonial) => (
             <li class="group/item lg:[&:nth-child(n+3)]:group-data-[show-more=false]:hidden">
               <TestimonialCard
                 {...testimonial}
-                class="lg:bg-surface-container group-last/item:pb-0 lg:h-fit lg:group-last/item:p-8"
+                class="group-last/item:pb-0 lg:h-fit lg:bg-surface lg:group-last/item:p-8"
               />
             </li>
           ))

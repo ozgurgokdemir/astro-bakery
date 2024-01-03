@@ -15,8 +15,8 @@ const { image, name, text, class: className, ...props } = Astro.props;
 
 <figure
   class={cx(
-    'p-6 lg:p-8 flex flex-col gap-4 lg:gap-6 lg:rounded-2xl lg:border border-outline lg:shadow-soft',
-    className
+    'flex flex-col gap-4 border-secondary p-6 lg:gap-6 lg:rounded-md lg:border lg:p-8 lg:shadow-of-bg-surface',
+    className,
   )}
   {...props}
 >
@@ -26,23 +26,22 @@ const { image, name, text, class: className, ...props } = Astro.props;
       alt={name}
       width={64}
       height={64}
-      class="h-12 w-12 lg:h-16 lg:w-16 rounded-full object-cover"
+      class="h-12 w-12 rounded-full object-cover shadow-of-bg-surface lg:h-16 lg:w-16"
     />
-    <div>
-      <cite
-        class="font-primary font-normal text-primary text-[1.25rem] lg:text-[1.5rem] not-italic"
+    <div class="space-y-0.5 lg:space-y-1">
+      <cite class="font-primary text-heading-xl font-bold not-italic text-brand"
         >{name}</cite
       >
-      <div class="flex gap-2 text-secondary">
-        <Icon name="heroicons:star-solid" class="h-3 lg:h-4 w-3 lg:w-4" />
-        <Icon name="heroicons:star-solid" class="h-3 lg:h-4 w-3 lg:w-4" />
-        <Icon name="heroicons:star-solid" class="h-3 lg:h-4 w-3 lg:w-4" />
-        <Icon name="heroicons:star-solid" class="h-3 lg:h-4 w-3 lg:w-4" />
-        <Icon name="heroicons:star-solid" class="h-3 lg:h-4 w-3 lg:w-4" />
+      <div class="text-fill flex gap-1 text-sm lg:text-md">
+        <Icon name="heroicons:star-solid" />
+        <Icon name="heroicons:star-solid" />
+        <Icon name="heroicons:star-solid" />
+        <Icon name="heroicons:star-solid" />
+        <Icon name="heroicons:star-solid" />
       </div>
     </div>
   </figcaption>
-  <blockquote class="font-secondary text-neutral/60 leading-relaxed">
+  <blockquote class="font-secondary text-body-md text-secondary">
     {text}
   </blockquote>
 </figure>

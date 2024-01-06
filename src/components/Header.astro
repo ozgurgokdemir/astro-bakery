@@ -8,13 +8,13 @@ import Button from '@/components/Button.astro';
 <header class="container flex items-center justify-between py-8 lg:py-12">
   <Logo />
   <nav aria-label="main" class="hidden items-center gap-12 lg:flex">
-    <NavLink href="/">Home</NavLink>
-    <NavLink href="/menu">Menu</NavLink>
-    <NavLink href="/about">About</NavLink>
+    <NavLink href="">Home</NavLink>
+    <NavLink href="">Menu</NavLink>
+    <NavLink href="">About</NavLink>
     <Button size="medium" asChild>
       {
         (className: string) => (
-          <a href="/contact" class={className}>
+          <a href="" class={className}>
             <span>Contact</span>
             <Icon name="heroicons:arrow-long-right-20-solid" class="h-5 w-5" />
           </a>

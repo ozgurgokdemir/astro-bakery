@@ -10,15 +10,14 @@ const FOOTER_DATA = {
     },
   ],
   browse: [
-    { href: '/', text: 'Home' },
-    { href: '/menu', text: 'Menu' },
-    { href: '/about', text: 'About' },
-    { href: '/contact', text: 'Contact' },
+    { href: '', text: 'Menu' },
+    { href: '', text: 'About' },
+    { href: '', text: 'Contact' },
   ],
   follow: [
-    { href: '/', text: 'Instagram' },
-    { href: '/', text: 'Twitter' },
-    { href: '/', text: 'YouTube' },
+    { href: '', text: 'Instagram' },
+    { href: '', text: 'Twitter' },
+    { href: '', text: 'YouTube' },
   ],
   openingHours: [
     'Monday - Friday: 7:00 AM - 7:00 PM',
@@ -34,7 +33,7 @@ const FOOTER_DATA = {
     class="container py-16 flex flex-col gap-8 lg:py-24 lg:flex-row lg:justify-between lg:gap-16"
   >
     <div class="flex flex-col gap-4">
-      <Logo href="/" />
+      <Logo />
       <ul class="flex flex-col gap-1 lg:mt-7">
         {
           FOOTER_DATA.info.map(({ href, text }) => (
@@ -105,7 +104,7 @@ const FOOTER_DATA = {
     class="container py-8 flex flex-col gap-1 border-t border-divider lg:py-6 lg:flex-row-reverse lg:justify-between"
   >
     <a
-      href="/"
+      href=""
       class="w-fit font-secondary font-medium leading-relaxed text-neutral/60 hover:text-neutral hover:underline focus-visible:text-neutral focus-visible:underline"
     >
       Privacy Policy

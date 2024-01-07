@@ -17,8 +17,8 @@ const {
 } = Astro.props;
 ---
 
-<div class="flex flex-col">
-  <label for={id} class="font-primary font-bold text-primary text-[1.25rem]">
+<div class="flex flex-col gap-2">
+  <label for={id} class="font-primary text-heading-xl font-bold text-brand">
     {label}
   </label>
   <input
@@ -27,8 +27,8 @@ const {
     {type}
     {required}
     class={cx(
-      'h-12 border-b border-primary outline-none font-secondary font-normal text-[1rem]',
-      className
+      'h-14 rounded-md border border-secondary bg-surface px-3 font-secondary text-body-md font-regular outline-none focus-visible:border-brand',
+      className,
     )}
     {...props}
   />

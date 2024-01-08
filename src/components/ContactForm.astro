@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import { Icon } from 'astro-icon/components';
 import { cx } from 'class-variance-authority';
 import Input from '@/components/Input.astro';
 import TextArea from '@/components/TextArea.astro';
@@ -11,7 +12,10 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <form
-  class={cx('grid grid-cols-1 lg:grid-cols-2 gap-y-6 gap-x-8', className)}
+  class={cx(
+    'grid grid-cols-1 gap-6 border-secondary bg px-6 py-8 lg:rounded-md lg:border lg:px-8 lg:shadow-of-bg-surface xl:grid-cols-2',
+    className,
+  )}
   {...props}
 >
   <Input id="name" label="Name" placeholder="John Doe" />
@@ -20,14 +24,11 @@ const { class: className, ...props } = Astro.props;
     id="message"
     label="Message"
     placeholder="How can we assist you?"
-    class="lg:col-span-2"
+    class="xl:col-span-2"
   />
-  <Button
-    type="submit"
-    variant="secondary"
-    class="lg:w-fit mt-[0.375rem] lg:mt-2 xl:mt-3"
-  >
-    Send message
+  <Button type="submit" class="my-[0.3125rem] xl:col-span-2">
+    <span>Send message</span>
+    <Icon name="heroicons:paper-airplane-20-solid" class="h-5 w-5" />
   </Button>
 </form>
 

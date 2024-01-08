@@ -60,7 +60,6 @@ export default {
     backgroundColor: {
       DEFAULT: `hsl(${BG_COLOR} / <alpha-value>)`,
       surface: 'hsl(46deg 24% 89% / <alpha-value>)',
-      'surface-secondary': 'hsl(0deg 33% 99% / <alpha-value>)',
       fill: `hsl(${FILL_COLOR} / <alpha-value>)`,
       'fill-hover': 'hsl(187deg 54% 25% / <alpha-value>)',
       'fill-brand': `hsl(${BRAND_COLOR} / <alpha-value>)`,

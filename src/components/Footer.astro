@@ -27,20 +27,20 @@ const FOOTER_DATA = {
 };
 ---
 
-<footer class="bg-surface-container">
+<footer class="divide-y divide-primary bg-surface">
   <nav
     aria-label="footer"
-    class="container py-16 flex flex-col gap-8 lg:py-24 lg:flex-row lg:justify-between lg:gap-16"
+    class="container flex flex-col gap-8 pb-8 pt-16 lg:flex-row lg:justify-between lg:pt-24"
   >
-    <div class="flex flex-col gap-4">
-      <Logo />
-      <ul class="flex flex-col gap-1 lg:mt-7">
+    <div class="flex flex-col justify-between gap-3">
+      <Logo class="w-fit" />
+      <ul class="flex flex-col gap-1 lg:gap-2">
         {
           FOOTER_DATA.info.map(({ href, text }) => (
             <li>
               <a
                 {href}
-                class="font-secondary font-medium leading-relaxed text-neutral/60 hover:text-neutral hover:underline focus-visible:text-neutral focus-visible:underline"
+                class="font-secondary text-body-md font-regular text-secondary hover:text hover:underline focus-visible:text focus-visible:underline"
               >
                 {text}
               </a>
@@ -49,15 +49,15 @@ const FOOTER_DATA = {
         }
       </ul>
     </div>
-    <div class="flex flex-col gap-4">
-      <h3 class="font-primary font-bold text-primary text-xl">Browse</h3>
-      <ul class="flex flex-col gap-1">
+    <div class="flex flex-col gap-3 lg:gap-6">
+      <h3 class="font-primary text-heading-xl font-bold text-brand">Browse</h3>
+      <ul class="flex flex-col gap-1 lg:gap-2">
         {
           FOOTER_DATA.browse.map(({ href, text }) => (
             <li>
               <a
                 {href}
-                class="font-secondary font-medium leading-relaxed text-neutral/60 hover:text-neutral hover:underline focus-visible:text-neutral focus-visible:underline"
+                class="font-secondary text-body-md font-regular text-secondary hover:text hover:underline focus-visible:text focus-visible:underline"
               >
                 {text}
               </a>
@@ -66,15 +66,15 @@ const FOOTER_DATA = {
         }
       </ul>
     </div>
-    <div class="flex flex-col gap-4">
-      <h3 class="font-primary font-bold text-primary text-xl">Follow</h3>
-      <ul class="flex flex-col gap-1">
+    <div class="flex flex-col gap-3 lg:gap-6">
+      <h3 class="font-primary text-heading-xl font-bold text-brand">Follow</h3>
+      <ul class="flex flex-col gap-1 lg:gap-2">
         {
           FOOTER_DATA.follow.map(({ href, text }) => (
             <li>
               <a
                 {href}
-                class="font-secondary font-medium leading-relaxed text-neutral/60 hover:text-neutral hover:underline focus-visible:text-neutral focus-visible:underline"
+                class="font-secondary text-body-md font-regular text-secondary hover:text hover:underline focus-visible:text focus-visible:underline"
               >
                 {text}
               </a>
@@ -83,15 +83,15 @@ const FOOTER_DATA = {
         }
       </ul>
     </div>
-    <div class="flex flex-col gap-4">
-      <h3 class="font-primary font-bold text-primary text-xl">
+    <div class="flex flex-col gap-3 lg:gap-6">
+      <h3 class="font-primary text-heading-xl font-bold text-brand">
         We are here for you
       </h3>
-      <ul class="flex flex-col gap-1">
+      <ul class="flex flex-col gap-1 lg:gap-2">
         {
           FOOTER_DATA.openingHours.map((text) => (
             <li>
-              <p class="font-secondary font-medium leading-relaxed text-neutral/60">
+              <p class="font-secondary text-body-md font-regular text-secondary">
                 {text}
               </p>
             </li>
@@ -101,15 +101,15 @@ const FOOTER_DATA = {
     </div>
   </nav>
   <div
-    class="container py-8 flex flex-col gap-1 border-t border-divider lg:py-6 lg:flex-row-reverse lg:justify-between"
+    class="container flex flex-col gap-1 pb-16 pt-8 lg:flex-row-reverse lg:justify-between lg:pb-24"
   >
     <a
       href=""
-      class="w-fit font-secondary font-medium leading-relaxed text-neutral/60 hover:text-neutral hover:underline focus-visible:text-neutral focus-visible:underline"
+      class="w-fit font-secondary text-body-md font-regular text-secondary hover:text hover:underline focus-visible:text focus-visible:underline"
     >
       Privacy Policy
     </a>
-    <p class="font-secondary font-medium leading-relaxed text-neutral/60">
+    <p class="font-secondary text-body-md font-regular text-secondary">
       &copy; 2020 Sweet Delights, Inc. All rights reserved.
     </p>
   </div>

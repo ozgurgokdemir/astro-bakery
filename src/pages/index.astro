@@ -313,25 +313,66 @@ import ContactForm from '@/components/ContactForm.astro';
       <ShowMore containerId="testimonials" class="border-none" />
     </div>
   </section>
-  <section class="bg-white py-16 lg:py-24">
-    <div
-      class="container flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-16"
-    >
-      <div class="flex-1">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195884.7199739243!2d32.76276475!3d39.903376550000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara!5e0!3m2!1str!2str!4v1701429555361!5m2!1str!2str"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          class="shadow-hard aspect-video w-full rounded-2xl lg:aspect-4/3"
-        ></iframe>
+  <section>
+    <div class="bg py-8 lg:pt-24">
+      <div class="container">
+        <header class="space-y-3">
+          <h2
+            class="font-primary text-heading-3xl font-bold text lg:text-heading-4xl"
+          >
+            Get in Touch
+          </h2>
+          <p
+            class="font-secondary text-body-md font-regular text-secondary lg:text-body-lg"
+          >
+            Any questions or remarks? Just send us a message
+          </p>
+        </header>
       </div>
-      <div class="flex flex-1 flex-col gap-4">
-        <h2
-          class="text-neutral font-primary text-[1.5rem] font-bold lg:text-[2rem] xl:text-[3rem]"
+    </div>
+    <div class="bg-surface">
+      <div class="flex flex-col lg:container lg:flex-row lg:gap-16">
+        <ul
+          class="container flex-1 space-y-3 py-8 lg:mx-0 lg:max-w-none lg:px-0 lg:pb-24"
         >
-          Get in Touch
-        </h2>
-        <ContactForm />
+          <li class="w-fit">
+            <a
+              href="tel:"
+              class="group flex items-center gap-2 hover:text lg:gap-3"
+            >
+              <Icon
+                name="heroicons:phone-20-solid"
+                class="h-5 w-5 text-brand"
+              />
+              <span
+                class="font-secondary text-body-md text-secondary group-hover:text group-hover:underline"
+              >
+                +1 (555) 123-4567
+              </span>
+            </a>
+          </li>
+          <li class="w-fit">
+            <a
+              href=""
+              class="group flex items-center gap-2 hover:text lg:gap-3"
+            >
+              <Icon
+                name="heroicons:map-pin-20-solid"
+                class="h-5 w-5 text-brand"
+              />
+              <span
+                class="font-secondary text-body-md text-secondary group-hover:text group-hover:underline"
+              >
+                123 Sweet Street, Bakeryville, CA 12345
+              </span>
+            </a>
+          </li>
+        </ul>
+        <div class="bg lg:flex-1 lg:bg-surface">
+          <ContactForm
+            class="container h-fit lg:mx-0 lg:-mt-[11.1875rem] lg:max-w-none lg:px-8"
+          />
+        </div>
       </div>
     </div>
   </section>

@@ -5,6 +5,7 @@ import featuredDelights from '@/data/featured-delights';
 import imageGallery from '@/data/image-gallery';
 import openingHours from '@/data/opening-hours';
 import testimonials from '@/data/testimonials';
+import contactInfo from '@/data/contact-info';
 import heroImage from '@/assets/ceyda-ciftci-OSwM-hfJoBQ-unsplash.jpg';
 import bakeryImage from '@/assets/austin-park-xAS8pWGMMGA-unsplash.jpg';
 import openingHoursImage from '@/assets/fabio-traina-6i6NJgCJ8k0-unsplash.jpg';
@@ -337,33 +338,30 @@ import ContactForm from '@/components/ContactForm.astro';
         >
           <li class="w-fit">
             <a
-              href="tel:"
+              href={contactInfo.phone.href}
               class="group flex items-center gap-2 hover:text lg:gap-3"
             >
-              <Icon
-                name="heroicons:phone-20-solid"
-                class="h-5 w-5 text-brand"
-              />
+              <Icon name="heroicons:phone-20-solid" class="h-5 w-5 text-fill" />
               <span
                 class="font-secondary text-body-md text-secondary group-hover:text group-hover:underline"
               >
-                +1 (555) 123-4567
+                {contactInfo.phone.text}
               </span>
             </a>
           </li>
           <li class="w-fit">
             <a
-              href=""
+              href={contactInfo.address.href}
               class="group flex items-center gap-2 hover:text lg:gap-3"
             >
               <Icon
                 name="heroicons:map-pin-20-solid"
-                class="h-5 w-5 text-brand"
+                class="h-5 w-5 text-fill"
               />
               <span
                 class="font-secondary text-body-md text-secondary group-hover:text group-hover:underline"
               >
-                123 Sweet Street, Bakeryville, CA 12345
+                {contactInfo.address.text}
               </span>
             </a>
           </li>

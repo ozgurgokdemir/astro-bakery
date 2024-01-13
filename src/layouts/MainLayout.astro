@@ -26,7 +26,9 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="font-primary text bg">
+  <body
+    class="after:bg-noise-loose lg:after:bg-noise-dense relative bg font-primary text after:pointer-events-none after:absolute after:left-0 after:top-0 after:z-50 after:h-full after:w-full after:opacity-20 after:contrast-0"
+  >
     <Header />
     <main>
       <slot />

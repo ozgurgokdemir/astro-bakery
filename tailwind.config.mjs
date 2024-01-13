@@ -20,6 +20,8 @@ const LINE_HEIGHT = {
 
 const BRAND_COLOR = '6deg 90% 16%';
 
+const BRAND_HOVER_COLOR = '6deg 54% 25%';
+
 const BG_COLOR = '46deg 24% 93%';
 
 const FILL_COLOR = '186deg 90% 16%';
@@ -69,12 +71,13 @@ export default {
       fill: `hsl(${FILL_COLOR} / <alpha-value>)`,
       'fill-hover': 'hsl(187deg 54% 25% / <alpha-value>)',
       'fill-brand': `hsl(${BRAND_COLOR} / <alpha-value>)`,
-      'fill-brand-hover': 'hsl(6deg 54% 25% / <alpha-value>)',
+      'fill-brand-hover': `hsl(${BRAND_HOVER_COLOR} / <alpha-value>)`,
     },
     textColor: {
       DEFAULT: 'hsl(60deg 2% 9% / <alpha-value>)',
       secondary: 'hsl(60deg 2% 37% / <alpha-value>)',
       brand: `hsl(${BRAND_COLOR} / <alpha-value>)`,
+      'brand-hover': `hsl(${BRAND_HOVER_COLOR} / <alpha-value>)`,
       fill: `hsl(${FILL_COLOR} / <alpha-value>)`,
       'on-bg-fill': 'hsl(0deg 33% 99% / <alpha-value>)',
       'on-bg-fill-brand': 'hsl(0deg 33% 99% / <alpha-value>)',

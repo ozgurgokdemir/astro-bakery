@@ -26,6 +26,12 @@ const FILL_COLOR = '186deg 90% 16%';
 
 const SHADOW = '0 0 1rem 0';
 
+const NOISE_URL_DENSE =
+  "data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E";
+
+const NOISE_URL_LOOSE =
+  "data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -105,6 +111,10 @@ export default {
       aspectRatio: {
         '4/3': '4 / 3',
         '3/4': '3 / 4',
+      },
+      backgroundImage: {
+        'noise-dense': `url("${NOISE_URL_DENSE}")`,
+        'noise-loose': `url("${NOISE_URL_LOOSE}")`,
       },
     },
   },

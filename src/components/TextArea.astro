@@ -19,7 +19,7 @@ const { id, label, required = true, class: className, ...props } = Astro.props;
     name={id}
     {required}
     rows="1"
-    class="resize-none overflow-y-hidden rounded-md border border-secondary bg-surface px-3 py-[0.8875rem] font-secondary text-body-md font-regular outline-none focus-visible:border-brand"
+    class="ring-brand resize-none overflow-y-hidden rounded-md border border-primary bg-surface px-3 py-[0.8875rem] font-secondary text-body-md font-regular focus-visible:border-brand focus-visible:outline-none focus-visible:ring-1"
     {...props}></textarea>
 </div>
 

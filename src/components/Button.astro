@@ -4,14 +4,14 @@ import { cva } from 'class-variance-authority';
 import Children from '@/components/Children.astro';
 
 export const buttonStyles = cva(
-  'flex items-center justify-center whitespace-nowrap rounded-md font-primary text-heading-xl',
+  'flex items-center justify-center whitespace-nowrap rounded-md font-primary text-heading-xl focus-visible:outline-none',
   {
     variants: {
       variant: {
         primary:
-          'bg-fill-brand text-on-bg-fill-brand hover:bg-fill-brand-hover hover:shadow-of-bg-fill-brand focus-visible:bg-fill-brand-hover focus-visible:shadow-of-bg-fill-brand',
+          'ring-brand bg-fill-brand text-on-bg-fill-brand ring-offset-2 hover:bg-fill-brand-hover hover:shadow-of-bg-fill-brand focus-visible:bg-fill-brand-hover focus-visible:shadow-of-bg-fill-brand focus-visible:ring',
         secondary:
-          'bg-fill text-on-bg-fill hover:bg-fill-hover hover:shadow-of-bg-fill focus-visible:bg-fill-hover focus-visible:shadow-of-bg-fill',
+          'ring-fill bg-fill text-on-bg-fill ring-offset-2 hover:bg-fill-hover hover:shadow-of-bg-fill focus-visible:bg-fill-hover focus-visible:shadow-of-bg-fill focus-visible:ring',
       },
       size: {
         medium: 'h-12 gap-2 px-6 font-regular',

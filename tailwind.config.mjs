@@ -26,6 +26,8 @@ const BG_COLOR = '46deg 24% 93%';
 
 const FILL_COLOR = '186deg 90% 16%';
 
+const FILL_HOVER_COLOR = '187deg 54% 25%';
+
 const SHADOW = '0 0 1rem 0';
 
 const NOISE_URL_DENSE =
@@ -69,7 +71,7 @@ export default {
       DEFAULT: `hsl(${BG_COLOR} / <alpha-value>)`,
       surface: 'hsl(46deg 24% 89% / <alpha-value>)',
       fill: `hsl(${FILL_COLOR} / <alpha-value>)`,
-      'fill-hover': 'hsl(187deg 54% 25% / <alpha-value>)',
+      'fill-hover': `hsl(${FILL_HOVER_COLOR} / <alpha-value>)`,
       'fill-brand': `hsl(${BRAND_COLOR} / <alpha-value>)`,
       'fill-brand-hover': `hsl(${BRAND_HOVER_COLOR} / <alpha-value>)`,
     },
@@ -87,6 +89,10 @@ export default {
       secondary: 'hsl(46deg 24% 85% / <alpha-value>)',
       brand: `hsl(${BRAND_COLOR} / <alpha-value>)`,
       bg: `hsl(${BG_COLOR} / <alpha-value>)`,
+    },
+    ringColor: {
+      fill: `hsl(${FILL_HOVER_COLOR} / <alpha-value>)`,
+      brand: `hsl(${BRAND_HOVER_COLOR} / <alpha-value>)`,
     },
     boxShadow: {
       'of-bg-surface': `${SHADOW} hsl(45deg 12% 80% / 0.75)`,

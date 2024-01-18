@@ -87,7 +87,7 @@ export default {
     borderColor: {
       primary: 'hsl(46deg 24% 81% / <alpha-value>)',
       secondary: 'hsl(46deg 24% 85% / <alpha-value>)',
-      brand: `hsl(${BRAND_COLOR} / <alpha-value>)`,
+      brand: `hsl(${BRAND_HOVER_COLOR} / <alpha-value>)`,
       bg: `hsl(${BG_COLOR} / <alpha-value>)`,
     },
     ringColor: {

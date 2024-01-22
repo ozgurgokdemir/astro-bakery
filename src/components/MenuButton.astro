@@ -1,0 +1,39 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { Icon } from 'astro-icon/components';
+import { cx } from 'class-variance-authority';
+
+type Props = HTMLAttributes<'button'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<button
+  id="menu-button"
+  type="button"
+  aria-label="menu button"
+  aria-haspopup="menu"
+  aria-controls="menu"
+  aria-expanded="false"
+  class={cx('group relative z-50 text', className)}
+  {...props}
+>
+  <Icon
+    name="heroicons:bars-3-20-solid"
+    class="block h-6 w-6 group-aria-expanded:hidden"
+  />
+  <Icon
+    name="heroicons:x-mark-solid"
+    class="hidden h-6 w-6 group-aria-expanded:block"
+  />
+</button>
+
+<script>
+  import { useMenu } from '@/features/menu';
+
+  const button = document.querySelector('button') as HTMLButtonElement;
+
+  const { toggle } = useMenu();
+
+  button.addEventListener('click', toggle);
+</script>

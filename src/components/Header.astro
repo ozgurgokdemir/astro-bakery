@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 import Logo from '@/components/Logo.astro';
 import NavLink from '@/components/NavLink.astro';
 import Button from '@/components/Button.astro';
+import MenuButton from '@/components/MenuButton.astro';
 ---
 
 <header class="container flex items-center justify-between py-8 lg:py-12">
@@ -22,7 +23,5 @@ import Button from '@/components/Button.astro';
       }
     </Button>
   </nav>
-  <button type="button" class="inline-block lg:hidden">
-    <Icon name="heroicons:bars-3-20-solid" class="h-6 w-6" />
-  </button>
+  <MenuButton class="lg:hidden" />
 </header>

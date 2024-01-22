@@ -1,0 +1,16 @@
+<div
+  id="overlay"
+  aria-hidden="true"
+  class="absolute inset-0 backdrop-blur-md aria-hidden:hidden"
+>
+</div>
+
+<script>
+  import { useMenu } from '@/features/menu';
+
+  const overlay = document.getElementById('overlay') as HTMLDivElement;
+
+  const { close } = useMenu();
+
+  overlay.addEventListener('click', close);
+</script>

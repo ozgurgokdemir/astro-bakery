@@ -5,6 +5,8 @@ import '@fontsource/merriweather/700.css';
 import '@fontsource/roboto';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import Overlay from '@/components/Overlay.astro';
+import Menu from '@/components/Menu.astro';
 
 type Props = {
   title?: string;
@@ -27,12 +29,17 @@ const {
     <title>{title}</title>
   </head>
   <body
-    class="relative bg font-primary text after:pointer-events-none after:absolute after:left-0 after:top-0 after:z-50 after:h-full after:w-full after:bg-noise-loose after:opacity-10 after:contrast-0 lg:after:bg-noise-dense"
+    data-menu-expanded="false"
+    class="group relative bg font-primary text after:pointer-events-none after:absolute after:left-0 after:top-0 after:z-50 after:h-full after:w-full after:bg-noise-loose after:opacity-10 after:contrast-0 data-[menu-expanded='true']:overflow-hidden lg:after:bg-noise-dense"
   >
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <div class="relative group-data-[menu-expanded='true']:-translate-x-72">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+      <Overlay />
+    </div>
+    <Menu />
   </body>
 </html>

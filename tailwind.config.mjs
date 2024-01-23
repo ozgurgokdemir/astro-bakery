@@ -83,16 +83,20 @@ export default {
       fill: `hsl(${FILL_COLOR} / <alpha-value>)`,
       'on-bg-fill': 'hsl(0deg 33% 99% / <alpha-value>)',
       'on-bg-fill-brand': 'hsl(0deg 33% 99% / <alpha-value>)',
+      'on-bg-fill-brand-secondary': `hsl(${BG_COLOR} / <alpha-value>)`,
     },
     borderColor: {
       primary: 'hsl(46deg 24% 81% / <alpha-value>)',
       secondary: 'hsl(46deg 24% 85% / <alpha-value>)',
-      brand: `hsl(${BRAND_HOVER_COLOR} / <alpha-value>)`,
+      brand: `hsl(${BRAND_COLOR} / <alpha-value>)`,
+      'brand-hover': `hsl(${BRAND_HOVER_COLOR} / <alpha-value>)`,
       bg: `hsl(${BG_COLOR} / <alpha-value>)`,
     },
     ringColor: {
-      fill: `hsl(${FILL_HOVER_COLOR} / <alpha-value>)`,
-      brand: `hsl(${BRAND_HOVER_COLOR} / <alpha-value>)`,
+      brand: `hsl(${BRAND_COLOR} / <alpha-value>)`,
+      'brand-hover': `hsl(${BRAND_HOVER_COLOR} / <alpha-value>)`,
+      fill: `hsl(${FILL_COLOR} / <alpha-value>)`,
+      'fill-hover': `hsl(${FILL_HOVER_COLOR} / <alpha-value>)`,
     },
     boxShadow: {
       'of-bg-surface': `${SHADOW} hsl(45deg 12% 80% / 0.75)`,

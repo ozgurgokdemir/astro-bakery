@@ -25,9 +25,9 @@ const links = [
       links.map(({ href, text, icon }) => (
         <a
           {href}
-          class="flex gap-6 border-b border-[#500C04] p-6 font-primary text-heading-xl font-regular text-on-bg-fill-brand first:border-y first:bg-fill-brand"
+          class="flex gap-6 border-b border-brand p-6 font-primary text-heading-xl font-regular text-on-bg-fill-brand first:border-y first:bg-fill-brand"
         >
-          <Icon name={icon} class="h-6 w-6 text-[#F1EFE8]" />
+          <Icon name={icon} class="text-on-bg-fill-brand-secondary h-6 w-6" />
           {text}
         </a>
       ))

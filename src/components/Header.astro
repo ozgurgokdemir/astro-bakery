@@ -6,22 +6,53 @@ import Button from '@/components/Button.astro';
 import MenuButton from '@/components/MenuButton.astro';
 ---
 
-<header class="container flex items-center justify-between py-8 lg:py-12">
-  <Logo />
-  <nav aria-label="main" class="hidden items-center gap-12 lg:flex">
-    <NavLink href="">Home</NavLink>
-    <NavLink href="">Menu</NavLink>
-    <NavLink href="">About</NavLink>
-    <Button size="medium" asChild>
-      {
-        (className: string) => (
-          <a href="" class={className}>
-            <span>Contact</span>
-            <Icon name="heroicons:arrow-long-right-20-solid" class="h-5 w-5" />
-          </a>
-        )
-      }
-    </Button>
-  </nav>
-  <MenuButton class="lg:hidden" />
+<header
+  class="fixed left-0 right-0 top-0 z-30 py-[--initial-padding] [--initial-padding:2rem] [--scrolled-padding:2rem] before:absolute before:inset-0 before:-z-10 before:border-b before:border-secondary before:bg-surface before:opacity-[--opacity,0] lg:[--initial-padding:3rem]"
+>
+  <div class="container flex items-center justify-between">
+    <Logo />
+    <nav aria-label="main" class="hidden items-center gap-12 lg:flex">
+      <NavLink href="">Home</NavLink>
+      <NavLink href="">Menu</NavLink>
+      <NavLink href="">About</NavLink>
+      <Button size="medium" asChild>
+        {
+          (className: string) => (
+            <a href="" class={className}>
+              <span>Contact</span>
+              <Icon
+                name="heroicons:arrow-long-right-20-solid"
+                class="h-5 w-5"
+              />
+            </a>
+          )
+        }
+      </Button>
+    </nav>
+    <MenuButton class="lg:hidden" />
+  </div>
 </header>
+
+<script>
+  import { useHeader } from '@/features/header';
+
+  const header = document.querySelector('header') as HTMLElement;
+
+  const root = document.getElementById('root') as HTMLDivElement;
+
+  root.style.paddingTop = `${header.offsetHeight}px`;
+
+  const { updateOpacity, updatePadding } = useHeader(header);
+
+  function handleScroll() {
+    requestAnimationFrame(() => {
+      const { scrollY } = window;
+
+      updateOpacity(scrollY);
+
+      updatePadding(scrollY);
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+</script>

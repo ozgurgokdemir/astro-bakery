@@ -34,25 +34,11 @@ import MenuButton from '@/components/MenuButton.astro';
 </header>
 
 <script>
-  import { useHeader } from '@/features/header';
-
-  const header = document.querySelector('header') as HTMLElement;
-
-  const root = document.getElementById('root') as HTMLDivElement;
-
-  root.style.paddingTop = `${header.offsetHeight}px`;
-
-  const { updateOpacity, updatePadding } = useHeader(header);
+  import { scrollEffect } from '@/features/header';
 
   function handleScroll() {
-    requestAnimationFrame(() => {
-      const { scrollY } = window;
-
-      updateOpacity(scrollY);
-
-      updatePadding(scrollY);
-    });
+    requestAnimationFrame(scrollEffect);
   }
 
-  window.addEventListener('scroll', handleScroll);
+  document.addEventListener('scroll', handleScroll);
 </script>

@@ -6,11 +6,9 @@
 </div>
 
 <script>
-  import { useMenu } from '@/features/menu';
+  import { close } from '@/features/menu';
 
   const overlay = document.getElementById('overlay') as HTMLDivElement;
-
-  const { close } = useMenu();
 
   overlay.addEventListener('click', close);
 </script>

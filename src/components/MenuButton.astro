@@ -29,11 +29,9 @@ const { class: className, ...props } = Astro.props;
 </button>
 
 <script>
-  import { useMenu } from '@/features/menu';
+  import { toggle } from '@/features/menu';
 
   const button = document.querySelector('button') as HTMLButtonElement;
-
-  const { toggle } = useMenu();
 
   button.addEventListener('click', toggle);
 </script>

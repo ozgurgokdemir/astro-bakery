@@ -1,20 +1,12 @@
-let isExpanded = document.body.dataset.menuExpanded ?? 'false';
-
 const button = document.getElementById('menu-button') as HTMLButtonElement;
 
 const menu = document.getElementById('menu') as HTMLDialogElement;
 
 const overlay = document.getElementById('overlay') as HTMLDivElement;
 
-function getState() {
-  return isExpanded;
-}
+let isExpanded = document.body.dataset.menuExpanded ?? 'false';
 
-function setState(state: 'true' | 'false') {
-  isExpanded = state;
-}
-
-function open() {
+export function open() {
   document.body.dataset.menuExpanded = 'true';
 
   button.setAttribute('aria-expanded', 'true');
@@ -23,10 +15,10 @@ function open() {
 
   overlay.setAttribute('aria-hidden', 'false');
 
-  setState('true');
+  isExpanded = 'true';
 }
 
-function close() {
+export function close() {
   document.body.dataset.menuExpanded = 'false';
 
   button.setAttribute('aria-expanded', 'false');
@@ -35,15 +27,9 @@ function close() {
 
   overlay.setAttribute('aria-hidden', 'true');
 
-  setState('false');
+  isExpanded = 'false';
 }
 
-function toggle() {
-  const isExpanded = getState();
-
+export function toggle() {
   isExpanded === 'true' ? close() : open();
-}
-
-export function useMenu() {
-  return { getState, open, close, toggle };
 }

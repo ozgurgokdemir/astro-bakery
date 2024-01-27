@@ -34,9 +34,11 @@ const {
   >
     <div
       id="root"
-      class="relative group-data-[menu-expanded='true']/body:-translate-x-72"
+      class="relative group-data-[menu-expanded='true']/body:-left-72"
     >
-      <Header />
+      <Header
+        class="group-data-[menu-expanded='true']/body:-translate-x-72 before:group-data-[menu-expanded='true']/body:[--opacity:0]"
+      />
       <main>
         <slot />
       </main>

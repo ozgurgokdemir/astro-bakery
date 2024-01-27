@@ -1,13 +1,23 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 import { Icon } from 'astro-icon/components';
 import Logo from '@/components/Logo.astro';
 import NavLink from '@/components/NavLink.astro';
 import Button from '@/components/Button.astro';
 import MenuButton from '@/components/MenuButton.astro';
+import { cx } from 'class-variance-authority';
+
+type Props = HTMLAttributes<'header'>;
+
+const { class: className, ...props } = Astro.props;
 ---
 
 <header
-  class="fixed left-0 right-0 top-0 z-30 py-[--initial-padding] [--initial-padding:2rem] [--scrolled-padding:2rem] before:absolute before:inset-0 before:-z-10 before:border-b before:border-secondary before:bg-surface before:opacity-[--opacity,0] lg:[--initial-padding:3rem]"
+  class={cx(
+    'fixed left-0 right-0 top-0 z-30 py-[--initial-padding] [--initial-padding:2rem] [--scrolled-padding:2rem] before:absolute before:inset-0 before:-z-10 before:border-b before:border-secondary before:bg-surface before:opacity-[--opacity,0] lg:[--initial-padding:3rem]',
+    className,
+  )}
+  {...props}
 >
   <div class="container flex items-center justify-between">
     <Logo />
